@@ -1,14 +1,46 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth import get_user_model
-
+from mptt.models import MPTTModel, TreeForeignKey
 # Create your models here.
 
 User = get_user_model()
 
 
+class Category(MPTTModel):
+    """Модель категорий с вложеностью
+    pip install django-mptt для вложенных категорий"""
+    title = models.CharField(max_length=255, verbose_name='Название категории')
+    slug = models.SlugField(max_length=255, verbose_name='URL категории', blank=True)
+    description = models.TextField(verbose_name='Описани категории')
+    parent = TreeForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        db_index=True,
+        related_name='children',
+        verbose_name='Родительская категория',
+    )
+
+    class MPTTMeta:
+        """Сортировка по вложенносьти"""
+        order_insertion_by = ('title',)
+
+    class Meta:
+        """
+        Сортировка, название модели в админ панели, таблица с данными
+        """
+        verbose_name = 'Категория',
+        verbose_name_plural = 'Категории',
+        db_table = 'app_categories',
+
+    def __str__(self):
+        return f'{self.title}'
+
 class Article(models.Model):
-    """Модель постов для сайта"""
+    """Модель постов для сайта
+    pip install pillow для работы ImageField"""
 
     STATUS_OPTIONS = (
         ('published', 'Опубликовано'),
@@ -31,7 +63,7 @@ class Article(models.Model):
     author = models.ForeignKey(to=User, verbose_name='Автор', on_delete=models.SET_DEFAULT, related_name='author_posts', default=1)
     updater = models.ForeignKey(to=User, verbose_name='Обновил', on_delete=models.SET_NULL, null=True, related_name='updater_posts', blank=True)
     fixed = models.BooleanField(verbose_name='Зафиксировано', default=False)
-
+    category = TreeForeignKey('Category', on_delete=models.PROTECT, related_name='articles', verbose_name='Категории')
     class Meta:
         db_table = 'app_articles'
         ordering = ['-fixed', '-time_create']
