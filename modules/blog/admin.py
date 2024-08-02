@@ -17,3 +17,4 @@ class CategoryAdmin(DraggableMPTTAdmin):
         ('Описание', {'fields': ('description',)})
     )
 
+admin.site.register(Article)
