@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 
 
-class ShopConfig(AppConfig):
+class BlogConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'shop'
+    name = 'modules.blog'
+    verbose_name = 'Блог'
