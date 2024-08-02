@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.BlogConfig',
     'mptt',
-    # 'shop.apps.ShopConfig',
+
 ]
 
 MIDDLEWARE = [
