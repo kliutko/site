@@ -8,11 +8,13 @@ User = get_user_model()
 
 
 class Category(MPTTModel):
-    """Модель категорий с вложеностью
-    pip install django-mptt для вложенных категорий"""
+    """
+    Модель категорий с вложеностью
+    pip install django-mptt для вложенных категорий
+    """
     title = models.CharField(max_length=255, verbose_name='Название категории')
     slug = models.SlugField(max_length=255, verbose_name='URL категории', blank=True)
-    description = models.TextField(verbose_name='Описани категории')
+    description = models.TextField(verbose_name='Описани категории',)
     parent = TreeForeignKey(
         'self',
         on_delete=models.CASCADE,
@@ -24,23 +26,27 @@ class Category(MPTTModel):
     )
 
     class MPTTMeta:
-        """Сортировка по вложенносьти"""
+        """
+        Сортировка по вложенносьти
+        """
         order_insertion_by = ('title',)
 
     class Meta:
         """
         Сортировка, название модели в админ панели, таблица с данными
         """
-        verbose_name = 'Категория',
-        verbose_name_plural = 'Категории',
-        db_table = 'app_categories',
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+        db_table = 'app_categories'
 
     def __str__(self):
         return f'{self.title}'
 
 class Article(models.Model):
-    """Модель постов для сайта
-    pip install pillow для работы ImageField"""
+    """
+    Модель постов для сайта
+    pip install pillow для работы ImageField
+    """
 
     STATUS_OPTIONS = (
         ('published', 'Опубликовано'),
@@ -49,8 +55,8 @@ class Article(models.Model):
 
     title = models.CharField(verbose_name='Заголовок', max_length=255)
     slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
-    description = models.TextField(verbose_name='Описание')
-    thumbnail =models.ImageField(
+    description = models.TextField(verbose_name='Описание',)
+    thumbnail = models.ImageField(
         verbose_name='превью поста',
         blank=True,
         upload_to='images/thumbnails/',
