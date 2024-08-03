@@ -84,7 +84,7 @@ class Article(models.Model):
         return f'{self.title}'
 
     def get_absolute_url(self):
-        return reverse('articles_detail', kwargs={'slug': self.slug})
+        return reverse('blog:articles_detail', kwargs={'slug': self.slug})
     
     def save(self, *args, **kwargs):
         """
