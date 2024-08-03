@@ -3,6 +3,7 @@ from django.core.validators import FileExtensionValidator
 from django.contrib.auth import get_user_model
 from mptt.models import MPTTModel, TreeForeignKey
 from django.urls import reverse
+from modules.services.utils import unique_slugfy
 # Create your models here.
 
 User = get_user_model()
@@ -42,6 +43,7 @@ class Category(MPTTModel):
 
     def __str__(self):
         return f'{self.title}'
+
 
 class Article(models.Model):
     """
@@ -83,3 +85,11 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('articles_detail', kwargs={'slug': self.slug})
+    
+    def save(self, *args, **kwargs):
+        """
+        Сохранение полей модели при их отсутствии
+        """
+        if not self.slug:
+            self.slug = unique_slugfy(self, self.title)
+        super().save(*args, **kwargs)

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.BlogConfig',
     'mptt',
+    'modules.services',
 
 ]
 
