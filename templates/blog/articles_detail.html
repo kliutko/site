@@ -1,15 +1,14 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    {% for article in articles %}
-    <img src="{{ article.thumbnail.url }} alt={{ article.title }}" width="150"/>
+
+    <img src="{{ article.thumbnail.url }} alt={{ article.title }}" width="250"/>
     <strong>{{ article.title }}</strong>
     <p>{{ article.description }}</p>
     <small>{{ article.time_create }}</small>
     <hr>
     <span>{{ article.category.title }}</span>
     <hr>
-    <a href="{{ article.get_absolute_url }}">Читать далее</a>
-    <hr>
-    {% endfor %}
+
+
 {% endblock %}
