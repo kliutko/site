@@ -25,6 +25,7 @@
       {% endblock %}
 
       {% block content %}
+<br>
 <section class="boxed-sm">
         <div class="container">
           <div class="row main">
@@ -168,6 +169,7 @@
                     <div class="desc">
                       <h3>
                         <a href="blog-detail.html">{{ article.title }}</a>
+                        <a href="{{ category.get_absolute_url }}" class ="btn btn-primary">{{ article.category.title }}</a>
                       </h3>
                       <p class="meta">
                         <span class="time">{{ article.time_create }}</span>
@@ -187,6 +189,7 @@
 
 <!--Paginations-->
                     {% include 'paginator.html' %}
+                  <br>
 
                 </div>
               </div>

@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth import get_user_model
-from mptt.models import MPTTModel, TreeForeignKey
+from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 from django.urls import reverse
 from modules.services.utils import unique_slugfy
 # Create your models here.
@@ -40,9 +40,14 @@ class Category(MPTTModel):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
         db_table = 'app_categories'
+        unique_together = [['parent', 'slug']]
 
     def __str__(self):
         return f'{self.title}'
+
+    def get_absolute_url(self):
+        return reverse('blog:articles_by_category', kwargs={'slug': self.slug})
+
 
 
 class Article(models.Model):
@@ -72,7 +77,7 @@ class Article(models.Model):
     author = models.ForeignKey(to=User, verbose_name='Автор', on_delete=models.SET_DEFAULT, related_name='author_posts', default=1)
     updater = models.ForeignKey(to=User, verbose_name='Обновил', on_delete=models.SET_NULL, null=True, related_name='updater_posts', blank=True)
     fixed = models.BooleanField(verbose_name='Зафиксировано', default=False)
-    category = TreeForeignKey('Category', on_delete=models.PROTECT, related_name='articles', verbose_name='Категории')
+    category = TreeManyToManyField('Category', related_name='articles', verbose_name='Категории')
     class Meta:
         db_table = 'app_articles'
         ordering = ['-fixed', '-time_create']

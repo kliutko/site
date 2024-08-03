@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'modules.system.apps.SystemConfig',
     'modules.blog.apps.BlogConfig',
     'mptt',
+    'django_mptt_admin',
     'modules.services',
 
 
