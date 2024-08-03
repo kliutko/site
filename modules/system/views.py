@@ -7,7 +7,7 @@ from modules.blog.models import Article, Category
 
 class IndexListView(ListView):
     model = Article
-    # template_name = 'blog/articles_list.html'
+    # template_name = 'blog/1articles_list.html'
     template_name = 'index.html'
     context_object_name = 'articles'
 

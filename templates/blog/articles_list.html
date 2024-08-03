@@ -1,19 +1,202 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-    {% for article in articles %}
- {% if article.thumbnail %}
- <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
- {% endif %}
 
-    <strong>{{ article.title }}</strong>
-    <p>{{ article.description|truncatewords:55|safe }}</p>
-    <small>{{ article.time_create }}</small>
-    <hr>
-    <span>{{ article.category.title }}</span>
-    <hr>
+      {% block banerheader %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+        <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+        <div class="overlay-call-to-action"></div>
+        <h3 class="heading-style-3">{{ title }} </h3>
+      </section>
+      {% endblock %}
 
-<a href="{{ article.get_absolute_url }}" class="readmore">Подробнее</a>
-    <hr>
-    {% endfor %}
-{% endblock %}
+
+      {% block imagecategory %}
+      {% endblock %}
+
+      {% block products %}
+      {% endblock %}
+
+      {% block bannerbody %}
+      {% endblock %}
+
+      {% block content %}
+<section class="boxed-sm">
+        <div class="container">
+          <div class="row main">
+            <div class="col-md-3">
+              <div class="sidebar">
+                <div class="widget widget-search">
+                  <form class="Orchid-form form-inline btn-add-on border no-radius">
+                    <div class="form-group">
+                      <input class="form-control" placeholder="Search..." type="text">
+                      <button class="btn btn-brand" type="submit">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+<!--                  left block-->
+                <div class="widget widget-blog-post">
+                  <h4 class="title text-center">Recent Post</h4>
+                  <ul class="list-blog">
+                    <li>
+                      <a href="blog-detail.html">
+                        <div class="img-wrapper">
+                          <img src="images/blog/thumb-01.jpg" alt="product">
+                        </div>
+                        <div class="desc">
+                          <h5 class="title">Growing Your...</h5>
+                          <p class="meta-time">January 02, 2017</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="blog-detail.html">
+                        <div class="img-wrapper">
+                          <img src="images/blog/thumb-02.jpg" alt="product">
+                        </div>
+                        <div class="desc">
+                          <h5 class="title">Food Heaven...</h5>
+                          <p class="meta-time">December 23, 2016</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="blog-detail.html">
+                        <div class="img-wrapper">
+                          <img src="images/blog/thumb-03.jpg" alt="product">
+                        </div>
+                        <div class="desc">
+                          <h5 class="title">The Nutrition...</h5>
+                          <p class="meta-time">December 11, 2016</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="widget widget-categories">
+                  <h4 class="title-widget text-center">Categories</h4>
+                  <ul>
+                    <li>
+                      <a href="shop.html">Vegatable
+                        <span>(5)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">Meat
+                        <span>(7)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">Fruits
+                        <span>(9)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">Bestseller
+                        <span>(10)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">Orchid Food
+                        <span>(6)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">Healthy Benefit
+                        <span>(5)</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="widget widget-categories">
+                  <h4 class="title-widget text-center">Archives</h4>
+                  <ul>
+                    <li>
+                      <a href="shop.html">March 2017
+                        <span>(5)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">Feberuary 2017
+                        <span>(7)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">January 2017
+                        <span>(9)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">December 2016
+                        <span>(10)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">November 2016
+                        <span>(6)</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+<!--             end left block-->
+<!--              content block -->
+            <br>
+            <br>
+            <div class="col-md-9">
+              <div class="row blog-h-full-width">
+                {% for article in articles %}
+                <div class="col-md-12">
+                  <div class="post">
+                    <div class="img-wrapper">
+                      <a href="blog-detail.html">
+                         {% if article.thumbnail %}
+                         <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
+                         {% else %}
+                         <img src="{% static 'images/blog/012.jpg' %}" alt="{{ article.title }}">
+                         {% endif %}
+
+                      </a>
+                    </div>
+                    <div class="desc">
+                      <h3>
+                        <a href="blog-detail.html">{{ article.title }}</a>
+                      </h3>
+                      <p class="meta">
+                        <span class="time">{{ article.time_create }}</span>
+                        <span class="comment">2</span>
+                      </p>
+                      <p class="sapo">{{ article.description|truncatewords:55|safe }}</p>
+                      <a class="read-more" href="{{ article.get_absolute_url }}">Читать далее...
+                        <i class="fa fa-long-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="row">
+                <div class="col-md-12 text-right">
+
+<!--Paginations-->
+                    {% include 'paginator.html' %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {% endblock %}
+
+
+    {% block subscribe %}
+    {% endblock %}
