@@ -3,7 +3,7 @@ from django.core.validators import FileExtensionValidator
 from django.contrib.auth import get_user_model
 from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 from django.urls import reverse
-from modules.services.utils import unique_slugfy
+from modules.services.utils import unique_slugify
 # Create your models here.
 
 User = get_user_model()
@@ -103,5 +103,5 @@ class Article(models.Model):
         Сохранение полей модели при их отсутствии
         """
         if not self.slug:
-            self.slug = unique_slugfy(self, self.title)
+            self.slug = unique_slugify(self, self.title)
         super().save(*args, **kwargs)

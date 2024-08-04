@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'modules.system.apps.SystemConfig',
     'modules.blog.apps.BlogConfig',
+    'modules.users.apps.UsersConfig',
     'mptt',
     'django_mptt_admin',
     'modules.services',
