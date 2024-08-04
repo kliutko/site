@@ -56,6 +56,11 @@ class Article(models.Model):
     pip install pillow для работы ImageField
     """
 
+    class ArticleManager(models.Manager):
+        def all(self):
+            return self.get_queryset().select_related('author').perfetch_related('category') .filter(status='published')
+
+
     STATUS_OPTIONS = (
         ('published', 'Опубликовано'),
         ('draft', 'Черновик')
@@ -78,6 +83,8 @@ class Article(models.Model):
     updater = models.ForeignKey(to=User, verbose_name='Обновил', on_delete=models.SET_NULL, null=True, related_name='updater_posts', blank=True)
     fixed = models.BooleanField(verbose_name='Зафиксировано', default=False)
     category = TreeManyToManyField('Category', related_name='articles', verbose_name='Категории')
+
+    objects = ArticleManager()
     class Meta:
         db_table = 'app_articles'
         ordering = ['-fixed', '-time_create']

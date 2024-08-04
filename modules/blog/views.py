@@ -13,6 +13,7 @@ class ArticleListView(ListView):
     paginate_by = 2
     paginate_orphans = 0
     paginator_class = Paginator
+    # queryset = Article.custom.all()
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Блог>'
