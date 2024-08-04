@@ -1,10 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+<br>
+<br>
+<br>
+<br>
+      {% block banerheader %}
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+        <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+        <div class="overlay-call-to-action"></div>
+        <h3 class="heading-style-3">{{ title }}</h3>
+      </section>
+      {% endblock %}
+      {% block imagecategory %}
+      {% endblock %}
+
+      {% block products %}
+
+      {% endblock %}
+
+      {% block bannerbody %}
+
+      {% endblock %}
+
+{% block content %}
+
+<div class="col-md-9">
+                        <div class="joom-profile">
+                            <h4 class="joomla-title">Edit Profile User</h4>
+                            <p>Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account.</p>
+                            <div class="row joom-profile-content">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                    <div class="user-info">
+                                        <h3 class="joomla-title">Обо мне</h3>
+                                        <p>{{ profile.bio }}</p>
+                                        <a href="#" class="j-entry-edit"> Edit</a>
+                                        <div class="joined">
+                                            <h6 class="joomla-title">Мероприятия к которым вы присоеденились</h6>
+                                            <ul>
+                                                <li>Science In The New Era</li>
+                                                <li>How To Sell Anything</li>
+                                                <li>Sussecful on your Business</li>
+                                            </ul>
+                                            <a href="#" class="j-entry-edit"> Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="TzUserProfiler">
+                                        <div class="tzuser-info">
+                                            <figure class="avatar">
+                                                <img src="{{ profile.avatar.url }}" alt="{{ profile }}">
+                                            </figure>
+<!--                                            {{ profile }}-->
+                                            <h5 class="joomla-title"> {% if profile.user.get_full_name %} {{ profile.user.get_full_name }}{% endif %}</h5>
+                                            <li>{% if profile.is_online %}Онлайн{% else %}Не в сети{% endif %}</li>
+                                            <li>Никнейм: {{ profile.user.username }}</li>
+                                            <li>Заходил: {{ profile.user.last_login }} </li>
+
+
+                                            <li>Дата рождения: {{ profile.birth_date }}</li>
+
+                                            <p>
+                                                Wedding Filmographer
+                                                <span>Newyork, USA</span>
+                                            </p>
+
+                     {% if request.user.is_authenticated and request.user != profile.user %} {% if request.user.profile in profile.followers.all %}
+					<button class="btn btn-sm btn-danger btn-follow" data-slug="{{ profile.slug }}">
+						Отписаться от {{ profile.user.username }}
+					</button>
+					{% else %}
+					<button class="btn btn-sm btn-primary btn-follow" data-slug="{{ profile.slug }}">
+						Подписаться на {{ profile.user.username }}
+					</button>
+					{% endif %} {% elif request.user == profile.user %}
+					<a href="{% url 'users:profile_edit' %}" class="btn btn-sm btn-primary">Редактировать профиль</a>
+					{% endif %}
+
+
+
+                                <div class="card border-0">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-6">
+					<h6 class="card-title">
+						Подписки
+					</h6>
+					<div class="card-text">
+						<div class="row">
+							{% for following in profile.following.all %}
+							<div class="col-md-2">
+								<a href="{{ following.get_absolute_url }}">
+									<img src="{{ following.get_avatar }}" class="img-fluid rounded-1" alt="{{ following }}" />
+								</a>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<h6 class="card-title">
+						Подписчики
+					</h6>
+					<div class="card-text">
+						<div class="row followers-box">
+							{% for follower in profile.followers.all %}
+							<div class="col-md-2" id="user-slug-{{ follower.slug }}">
+								<a href="{{ follower.get_absolute_url }}">
+									<img src="{{ follower.get_avatar }}" class="img-fluid rounded-1" alt="{{ follower }}" />
+								</a>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+      {% endblock %}
+    </div>
+
+
+{% block subscribe %}
+
+    {% endblock %}
+
+
