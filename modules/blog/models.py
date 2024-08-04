@@ -58,7 +58,7 @@ class Article(models.Model):
 
     class ArticleManager(models.Manager):
         def all(self):
-            return self.get_queryset().select_related('author').perfetch_related('category') .filter(status='published')
+            return self.get_queryset().select_related('author').prefetch_related('category').filter(status='published')
 
 
     STATUS_OPTIONS = (
