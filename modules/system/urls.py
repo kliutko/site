@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import IndexListView, FeedbackCreateView
+from modules.system.views import IndexListView, FeedbackCreateView
 from modules.blog.views import ArticleListView, ArticleDetailView
 
 
