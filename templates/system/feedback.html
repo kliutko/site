@@ -1,12 +1,19 @@
-{% extends 'main.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <div class="card mb-3 border-0 nth-shadow">
         <div class="card-body">
             <div class="card-title nth-card-title">
                 <h4>Контактная форма</h4>
             </div>
-            <form method="post" action="{% url 'feedback' %}">
+            <form method="post" action="{% url 'system:feedback' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="d-grid gap-2 d-md-block mt-2">

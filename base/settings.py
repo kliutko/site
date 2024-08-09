@@ -24,6 +24,22 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Europe/Moscow'
 
 
+
+# email yandex
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+
+EMAIL_HOST_USER = 'kliutko.fr@yandex.by'
+EMAIL_HOST_PASSWORD = 'uocvkhbbuipkpodl'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = EMAIL_HOST_USER
+EMAIL_ADMINS = ('kliutko.fr@ya.ru',)  # Email Admin to Feedback
+EMAIL_SERVER = EMAIL_HOST_USER
+
 # CSRF_TRUSTED_ORIGINS = ['https://*.selfincome.ru']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
