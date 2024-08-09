@@ -13,6 +13,17 @@ import os
 from pathlib import Path
 
 
+# celery settings
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Europe/Moscow'
+
+
 # CSRF_TRUSTED_ORIGINS = ['https://*.selfincome.ru']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,6 +39,16 @@ SECRET_KEY = 'django-insecure-f6bm&jf+o-n5%^mfs@)=rcp35poiz)@8!#0uztct$ewy@(^@vn
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://localhost:6379',
+    }
+}
+
+
+
 
 
 # Application definition
