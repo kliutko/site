@@ -37,7 +37,7 @@ def send_activate_email_message(user_id):
     uid = urlsafe_base64_encode(force_bytes(user.pk))
     activation_url = reverse_lazy('users:confirm_email', kwargs={'uidb64': uid, 'token': token})
     subject = f'Активируйте свой аккаунт, {user.username}!'
-    message = render_to_string('users/email/activate_email_send.html', {
+    message = render_to_string('system/email/activate_email_send.html', {
         'user': user,
         'activation_url': f'http://{current_site}{activation_url}',
     })
