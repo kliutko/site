@@ -25,6 +25,8 @@ class ArticleCreateForm(forms.ModelForm):
         self.fields['description'].required = False
 
 
+
+
 class ArticleUpdateForm(ArticleCreateForm):
     """
     Форма обновления статьи на сайте

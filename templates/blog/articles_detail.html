@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 {% load static %}
-
+{% load mptt_tags %}
 
       {% block banerheader %}
       <br>
@@ -168,12 +168,12 @@
                          {% else %}
                          <img class="img-responsive pull-right" src="{% static 'images/blog/012.jpg' %}" alt="{{ article.title }}">
                          {% endif %}
-                    <p </p>
+                    <p></p>
                     <div class="row">
                       <div class="col-md-12">
                         <h4></h4>
 
-                        <p>{{ article.description }}</p>
+                        <p>{{ article.description|safe }}</p>
                       </div>
                     </div>
                     <div class="row">
@@ -184,6 +184,14 @@
                     </div>
                   </div>
                 </article>
+
+<!--rating-->
+	<div class="rating-buttons">
+		<button class="btn btn-sm btn-primary" data-article="{{ article.id }}" data-value="1">Лайк</button>
+		<button class="btn btn-sm btn-secondary" data-article="{{ article.id }}" data-value="-1">Дизлайк</button>
+		<button class="btn btn-sm btn-secondary rating-sum">{{ article.get_sum_rating }}</button>
+	</div>
+<!--endrating-->
                 <div class="row">
                   <div class="col-md-12 text-center">
 <!--                    social-->
@@ -374,4 +382,6 @@
     {% block subscribe %}
     {% endblock %}
 
-
+{% block script %}
+<script src="{% static 'custom/js/ratings.js' %}"></script>
+{% endblock%}

@@ -17,6 +17,11 @@ import random
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
+
+from django.views.generic import View
+
+from .models import Rating
+from ..services.utils import get_client_ip
 # Create your views here.
 
 
@@ -55,6 +60,33 @@ class ArticleDetailView(DeleteView):
         return context
 
 
+
+
+class RatingCreateView(View):
+    model = Rating
+
+    def post(self, request, *args, **kwargs):
+        article_id = request.POST.get('article_id')
+        value = int(request.POST.get('value'))
+        ip_address = get_client_ip(request)
+        user = request.user if request.user.is_authenticated else None
+
+        rating, created = self.model.objects.get_or_create(
+            article_id=article_id,
+            ip_address=ip_address,
+            defaults={'value': value, 'user': user},
+        )
+
+        if not created:
+            if rating.value == value:
+                rating.delete()
+                return JsonResponse({'status': 'deleted', 'rating_sum': rating.article.get_sum_rating()})
+            else:
+                rating.value = value
+                rating.user = user
+                rating.save()
+                return JsonResponse({'status': 'updated', 'rating_sum': rating.article.get_sum_rating()})
+        return JsonResponse({'status': 'created', 'rating_sum': rating.article.get_sum_rating()})
 
 
 

@@ -1,7 +1,7 @@
 
 from django.urls import path
 from .views import ArticleListView, ArticleDetailView, ArticleByCategoryListview, ArticleCreateView, ArticleUpdateView, \
-    ArticleDeleteView, CommentCreateView, ArticleByTagListView, ArticleSearchResultView
+    ArticleDeleteView, CommentCreateView, ArticleByTagListView, ArticleSearchResultView, RatingCreateView
 
 app_name = 'blog'
 
@@ -16,4 +16,5 @@ urlpatterns = [
     path('articles/tags/<str:tag>/', ArticleByTagListView.as_view(), name='articles_by_tags'),
     path('category/<str:slug>/', ArticleByCategoryListview.as_view(), name='articles_by_category'),
     path('search/', ArticleSearchResultView.as_view(), name='search'),
+    path('rating/', RatingCreateView.as_view(), name='rating'),
 ]

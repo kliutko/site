@@ -21,7 +21,9 @@ from django.conf import settings
 
 
 urlpatterns = [
+
     path('', include('modules.system.urls')),
+    path('ckeditor5/', include('django_ckeditor_5.urls')),
     path('admin/', admin.site.urls),
     path('users/', include('modules.users.urls')),
     path('blog/', include('modules.blog.urls')),

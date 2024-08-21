@@ -5,6 +5,8 @@ from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 from django.urls import reverse
 from modules.services.utils import unique_slugify
 from taggit.managers import TaggableManager
+from django_ckeditor_5.fields import CKEditor5Field
+
 # Create your models here.
 
 User = get_user_model()
@@ -59,7 +61,7 @@ class Article(models.Model):
 
     class ArticleManager(models.Manager):
         def all(self):
-            return self.get_queryset().select_related('author').prefetch_related('category').filter(status='published')
+            return self.get_queryset().select_related('author').prefetch_related('category', 'ratings').filter(status='published')
 
         def detail(self):
             """
@@ -67,7 +69,7 @@ class Article(models.Model):
             """
             return self.get_queryset() \
                 .select_related('author') \
-                .prefetch_related('category', 'comments', 'comments__author', 'comments__author__profile', 'tags') \
+                .prefetch_related('category', 'comments', 'comments__author', 'comments__author__profile', 'tags','ratings') \
                 .filter(status='published')
 
 
@@ -79,7 +81,7 @@ class Article(models.Model):
 
     title = models.CharField(verbose_name='Заголовок', max_length=255)
     slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
-    description = models.TextField(verbose_name='Описание',)
+    description = CKEditor5Field(verbose_name='Описание', config_name='extends')
     thumbnail = models.ImageField(
         verbose_name='превью поста',
         blank=True,
@@ -118,6 +120,9 @@ class Article(models.Model):
             self.slug = unique_slugify(self, self.title)
         super().save(*args, **kwargs)
 
+    def get_sum_rating(self):
+        return sum([rating.value for rating in self.ratings.all()])
+
 
 class Comment(MPTTModel):
     """
@@ -149,3 +154,27 @@ class Comment(MPTTModel):
 
     def __str__(self):
         return f'{self.author}:{self.content}'
+
+
+
+
+
+class Rating(models.Model):
+    """
+    Модель рейтинга: Лайк - Дизлайк
+    """
+    article = models.ForeignKey(to=Article, verbose_name='Статья', on_delete=models.CASCADE, related_name='ratings')
+    user = models.ForeignKey(to=User, verbose_name='Пользователь', on_delete=models.CASCADE, blank=True, null=True)
+    value = models.IntegerField(verbose_name='Значение', choices=[(1, 'Нравится'), (-1, 'Не нравится')])
+    time_create = models.DateTimeField(verbose_name='Время добавления', auto_now_add=True)
+    ip_address = models.GenericIPAddressField(verbose_name='IP Адрес')
+
+    class Meta:
+        unique_together = ('article', 'ip_address')
+        ordering = ('-time_create',)
+        indexes = [models.Index(fields=['-time_create', 'value'])]
+        verbose_name = 'Рейтинг'
+        verbose_name_plural = 'Рейтинги'
+
+    def __str__(self):
+        return self.article.title
