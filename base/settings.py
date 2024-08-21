@@ -84,9 +84,11 @@ INSTALLED_APPS = [
     'django_mptt_admin',
     'modules.services',
     'debug_toolbar',
-
+    'taggit',
+    'django_ckeditor_5',
 
 ]
+
 SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,11 +132,14 @@ WSGI_APPLICATION = 'base.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'app',
+        'USER': 'postgres',
+        'PASSWORD': '0904',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

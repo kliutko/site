@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 from django.urls import reverse
 from modules.services.utils import unique_slugify
+from taggit.managers import TaggableManager
 # Create your models here.
 
 User = get_user_model()
@@ -60,6 +61,16 @@ class Article(models.Model):
         def all(self):
             return self.get_queryset().select_related('author').prefetch_related('category').filter(status='published')
 
+        def detail(self):
+            """
+            Детальная статья (SQL запрос с фильтрацией для страницы со статьёй)
+            """
+            return self.get_queryset() \
+                .select_related('author') \
+                .prefetch_related('category', 'comments', 'comments__author', 'comments__author__profile', 'tags') \
+                .filter(status='published')
+
+
 
     STATUS_OPTIONS = (
         ('published', 'Опубликовано'),
@@ -84,6 +95,7 @@ class Article(models.Model):
     fixed = models.BooleanField(verbose_name='Зафиксировано', default=False)
     category = TreeManyToManyField('Category', related_name='articles', verbose_name='Категории')
 
+    tags = TaggableManager()
     objects = ArticleManager()
     class Meta:
         db_table = 'app_articles'

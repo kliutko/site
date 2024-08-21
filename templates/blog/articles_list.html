@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load mptt_tags %}
+{% load blog_tags %}
 
 
       {% block banerheader %}
@@ -32,9 +34,10 @@
             <div class="col-md-3">
               <div class="sidebar">
                 <div class="widget widget-search">
-                  <form class="Orchid-form form-inline btn-add-on border no-radius">
+                  <form class="Orchid-form form-inline btn-add-on border no-radius" role="search" method="get" action="{% url 'blog:search' %}">
                     <div class="form-group">
-                      <input class="form-control" placeholder="Search..." type="text">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name='do' autocomplete="off" id="search">
+
                       <button class="btn btn-brand" type="submit">
                         <i class="fa fa-search"></i>
                       </button>
@@ -46,6 +49,8 @@
                   <h4 class="title text-center">Recent Post</h4>
                   <ul class="list-blog">
                     <li>
+
+                      {% show_latest_comments count=5 %}
                       <a href="blog-detail.html">
                         <div class="img-wrapper">
                           <img src="images/blog/thumb-01.jpg" alt="product">

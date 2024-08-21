@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldd2ysqAAAAAHrm09wLO6nY9QVpeWbynJmZZKph"></script>
+  <!-- Your code -->
+
     <title>{{ title }}</title>
     <meta charset="utf-8" />
     <meta name="description" content="" />
@@ -37,6 +41,8 @@
 
       {% block content %}
       {% endblock %}
+
+      {% block sidebar %}{% endblock %}
     </div>
 
 
@@ -347,6 +353,7 @@
     <!-- Demo Only-->
     <script src="{% static 'js/demo-add-to-cart.js' %}"></script>
 
-
+  <script src="{% static 'custom/js/backend.js' %}"></script>
+  {% block script %}{% endblock %}
   </body>
 </html>

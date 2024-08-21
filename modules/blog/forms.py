@@ -1,7 +1,7 @@
 from django import forms
 
 from modules.blog.models import Article
-
+from .models import Comment
 
 class ArticleCreateForm(forms.ModelForm):
     """
@@ -46,3 +46,16 @@ class ArticleUpdateForm(ArticleCreateForm):
         self.fields['description'].widget.attrs.update({'class': 'form-control django_ckeditor_5'})
         self.fields['description'].required = False
 
+
+
+
+class CommentCreateForm(forms.ModelForm):
+    """
+    Форма добавления комментариев к статьям
+    """
+    parent = forms.IntegerField(widget=forms.HiddenInput, required=False)
+    content = forms.CharField(label='', widget=forms.Textarea(attrs={'cols': 30, 'rows': 5, 'placeholder': 'Комментарий', 'class': 'form-control'}))
+
+    class Meta:
+        model = Comment
+        fields = ('content',)
