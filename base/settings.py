@@ -45,6 +45,12 @@ CSRF_TRUSTED_ORIGINS = ['https://*.selfincome.ru']
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+AUTHENTICATION_BACKENDS = [
+    'modules.users.backends.UserModelBackend'
+]
+
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -87,6 +93,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'taggit',
     'django_ckeditor_5',
+    'django_cleanup',
 
 ]
 
@@ -100,6 +107,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'modules.system.middleware.ActiveUserMiddleware',
 ]
 
 INTERNAL_IPS = [

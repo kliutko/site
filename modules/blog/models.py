@@ -6,7 +6,7 @@ from django.urls import reverse
 from modules.services.utils import unique_slugify
 from taggit.managers import TaggableManager
 from django_ckeditor_5.fields import CKEditor5Field
-
+from modules.services.utils import unique_slugify, image_compress
 # Create your models here.
 
 User = get_user_model()
@@ -109,6 +109,10 @@ class Article(models.Model):
     def __str__(self):
         return f'{self.title}'
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__thumbnail = self.thumbnail if self.pk else None
+
     def get_absolute_url(self):
         return reverse('blog:articles_detail', kwargs={'slug': self.slug})
     
@@ -120,8 +124,16 @@ class Article(models.Model):
             self.slug = unique_slugify(self, self.title)
         super().save(*args, **kwargs)
 
+        if self.__thumbnail != self.thumbnail and self.thumbnail:
+            image_compress(self.thumbnail.path, width=500, height=500)
+
     def get_sum_rating(self):
         return sum([rating.value for rating in self.ratings.all()])
+
+
+
+
+
 
 
 class Comment(MPTTModel):
