@@ -7,6 +7,7 @@ from modules.services.utils import unique_slugify
 from taggit.managers import TaggableManager
 from django_ckeditor_5.fields import CKEditor5Field
 from modules.services.utils import unique_slugify, image_compress
+from datetime import date
 # Create your models here.
 
 User = get_user_model()
@@ -61,7 +62,7 @@ class Article(models.Model):
 
     class ArticleManager(models.Manager):
         def all(self):
-            return self.get_queryset().select_related('author').prefetch_related('category', 'ratings').filter(status='published')
+            return self.get_queryset().select_related('author').prefetch_related('category', 'ratings', 'views').filter(status='published')
 
         def detail(self):
             """
@@ -69,7 +70,7 @@ class Article(models.Model):
             """
             return self.get_queryset() \
                 .select_related('author') \
-                .prefetch_related('category', 'comments', 'comments__author', 'comments__author__profile', 'tags','ratings') \
+                .prefetch_related('category', 'comments', 'comments__author', 'comments__author__profile', 'tags','ratings', 'views') \
                 .filter(status='published')
 
 
@@ -130,8 +131,18 @@ class Article(models.Model):
     def get_sum_rating(self):
         return sum([rating.value for rating in self.ratings.all()])
 
+    def get_view_count(self):
+        """
+        Возвращает количество просмотров для данной статьи
+        """
+        return self.views.count()
 
-
+    def get_today_view_count(self):
+        """
+        Возвращает количество просмотров для данной статьи за сегодняшний день
+        """
+        today = date.today()
+        return self.views.filter(viewed_on__date=today).count()
 
 
 
@@ -165,9 +176,16 @@ class Comment(MPTTModel):
         verbose_name_plural = 'Комментарии'
 
     def __str__(self):
-        return f'{self.author}:{self.content}'
+        if self.author:
+            return f'{self.author}:{self.content}'
+        else:
+            return f'{self.name} ({self.email}):{self.content}'
 
-
+    @property
+    def get_avatar(self):
+        if self.author:
+            return self.author.profile.get_avatar
+        return f'https://ui-avatars.com/api/?size=190&background=random&name={self.name}'
 
 
 
@@ -187,6 +205,24 @@ class Rating(models.Model):
         indexes = [models.Index(fields=['-time_create', 'value'])]
         verbose_name = 'Рейтинг'
         verbose_name_plural = 'Рейтинги'
+
+    def __str__(self):
+        return self.article.title
+
+
+class ViewCount(models.Model):
+    """
+    Модель просмотров для статей
+    """
+    article = models.ForeignKey('Article', on_delete=models.CASCADE, related_name='views')
+    ip_address = models.GenericIPAddressField(verbose_name='IP адрес')
+    viewed_on = models.DateTimeField(auto_now_add=True, verbose_name='Дата просмотра')
+
+    class Meta:
+        ordering = ('-viewed_on',)
+        indexes = [models.Index(fields=['-viewed_on'])]
+        verbose_name = 'Просмотр'
+        verbose_name_plural = 'Просмотры'
 
     def __str__(self):
         return self.article.title

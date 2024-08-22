@@ -31,7 +31,6 @@ class ProfileDetailView(DetailView):
     model = Profile
     context_object_name = 'profile'
     template_name = 'users/profile_detail.html'
-
     queryset = model.objects.all().select_related('user').prefetch_related('followers', 'followers__user', 'following', 'following__user')
 
 

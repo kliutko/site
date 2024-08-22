@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+from celery.schedules import crontab
 
 
 # celery settings
@@ -23,7 +24,12 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Europe/Moscow'
 
-
+CELERY_BEAT_SCHEDULE = {
+    'backup_database': {
+        'task': 'modules.services.tasks.dbackup_task', # Путь к задаче указанной в tasks.py
+        'schedule': crontab(hour=0, minute=0),  # Резервная копия будет создаваться каждый день в полночь
+    },
+}
 
 # email yandex
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -57,7 +57,9 @@ class CommentCreateForm(forms.ModelForm):
     """
     parent = forms.IntegerField(widget=forms.HiddenInput, required=False)
     content = forms.CharField(label='', widget=forms.Textarea(attrs={'cols': 30, 'rows': 5, 'placeholder': 'Комментарий', 'class': 'form-control'}))
+    name = forms.CharField(label='Имя', max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Введите ваше имя', 'class': 'form-control'}), required=False)
+    email = forms.EmailField(label='Email', max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Введите ваш email', 'class': 'form-control'}), required=False)
 
     class Meta:
         model = Comment
-        fields = ('content',)
+        fields = ('content', 'name', 'email')

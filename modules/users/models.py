@@ -62,6 +62,12 @@ class Profile(models.Model):
             return True
         return False
 
+    @property
+    def get_avatar(self):
+        if self.author:
+            return self.author.profile.get_avatar
+        return f'https://ui-avatars.com/api/?size=190&background=random&name={self.name}'
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
