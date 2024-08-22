@@ -40,7 +40,7 @@ EMAIL_ADMIN = EMAIL_HOST_USER
 EMAIL_ADMINS = ('kliutko.fr@ya.ru',)  # Email Admin to Feedback
 EMAIL_SERVER = EMAIL_HOST_USER
 
-# CSRF_TRUSTED_ORIGINS = ['https://*.selfincome.ru']
+CSRF_TRUSTED_ORIGINS = ['https://*.selfincome.ru']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'modules.system.apps.SystemConfig',
     'modules.blog.apps.BlogConfig',
     'modules.users.apps.UsersConfig',
