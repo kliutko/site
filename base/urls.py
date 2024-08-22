@@ -21,6 +21,8 @@ from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
 
 from modules.blog.sitemaps import StaticSitemap, ArticleSitemap
+from modules.blog.feeds import LatestArticlesFeed
+
 sitemaps = {
     'static': StaticSitemap,
     'articles': ArticleSitemap,
@@ -33,6 +35,7 @@ urlpatterns = [
     path('', include('modules.system.urls')),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
     path('admin/', admin.site.urls),
+    path('feeds/latest/', LatestArticlesFeed(), name='latest_articles_feed'),
     path('users/', include('modules.users.urls')),
     path('blog/', include('modules.blog.urls')),
     path('system/', include('modules.system.urls')),
