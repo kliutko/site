@@ -1,0 +1,55 @@
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mptt_tags %}
+
+      {% block banerheader %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+        <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+        <div class="overlay-call-to-action"></div>
+        <h3 class="heading-style-3">{{ title }}</h3>
+      </section>
+
+
+
+
+      {% endblock %}
+
+
+      {% block imagecategory %}
+      {% endblock %}
+
+      {% block products %}
+      {% endblock %}
+
+      {% block bannerbody %}
+      {% endblock %}
+
+      {% block content %}
+
+      <section class="boxed-sm section-404-wrapper">
+        <div class="container">
+          <div class="page-404-wrapper">
+            <h3></h3>
+            <hr class="style-one">
+            <p> {{ error_message }}</p>
+            <a class="btn btn-brand pill" href="{% url 'system:home' %}">Вернутся на главную</a>
+          </div>
+        </div>
+      </section>
+
+
+     {% endblock %}
+
+
+    {% block subscribe %}
+    {% endblock %}
+
+{% block script %}
+{% endblock%}
