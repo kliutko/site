@@ -51,7 +51,7 @@ class ArticleListView(ViewCountReklamaMixin, ListView):
 
         return context
 
-class ArticleDetailView(ViewCountMixin, ViewCountReklamaMixin, DeleteView):
+class ArticleDetailView(ViewCountMixin, DeleteView):
     model = Article
     template_name = 'blog/articles_detail.html'
     context_object_name = 'article'
@@ -69,6 +69,9 @@ class ArticleDetailView(ViewCountMixin, ViewCountReklamaMixin, DeleteView):
         context['title'] = self.object.title
         context['form'] = CommentCreateForm
         context['similar_articles'] = self.get_similar_articles(self.object)
+        context['banner_header'] = Reklama.objects.all().filter(placement='header_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        context['banner_footer'] = Reklama.objects.all().filter(placement='footer_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+
         return context
 
 
