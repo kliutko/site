@@ -34,7 +34,7 @@ handler500 = 'modules.system.views.tr_handler500'
 
 urlpatterns = [
 
-    path('', include('modules.system.urls')),
+    # path('', include('modules.system.urls')),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
     path('admin/', admin.site.urls),
     path('feeds/latest/', LatestArticlesFeed(), name='latest_articles_feed'),

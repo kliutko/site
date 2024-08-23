@@ -1,3 +1,4 @@
+from django.db.models.functions import datetime
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
@@ -18,16 +19,22 @@ from .models import Comment
 import random
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
-
+from datetime import date
 
 from django.views.generic import View
 
 from .models import Rating
 from ..services.utils import get_client_ip
+from ..system.mixins import ViewCountReklamaMixin
+from ..system.models import Reklama
+from django.utils import timezone
+
+now = timezone.localtime()
+# now = datetime.datetime.now().time()
 # Create your views here.
 
 
-class ArticleListView(ListView):
+class ArticleListView(ViewCountReklamaMixin, ListView):
     model = Article
     template_name = 'blog/articles_list.html'
     context_object_name = 'articles'
@@ -38,10 +45,13 @@ class ArticleListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Блог>'
+        context['title'] = 'Блог'
+        context['banner_header'] = Reklama.objects.all().filter(placement='header_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        context['banner_footer'] = Reklama.objects.all().filter(placement='footer_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+
         return context
 
-class ArticleDetailView(ViewCountMixin, DeleteView):
+class ArticleDetailView(ViewCountMixin, ViewCountReklamaMixin, DeleteView):
     model = Article
     template_name = 'blog/articles_detail.html'
     context_object_name = 'article'

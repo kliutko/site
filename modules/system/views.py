@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DeleteView
 from modules.blog.models import Article, Category
-
+from django.db import models
 
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy

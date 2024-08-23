@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Feedback
+from .models import Feedback, Reklama, ViewCount
 
 
 @admin.register(Feedback)
@@ -12,6 +12,21 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_display_links = ('email', 'ip_address')
 
 
-from django.contrib import admin
+
+@admin.register(Reklama)
+class ReklamaAdmin(admin.ModelAdmin):
+
+    list_display = ('title', 'status', 'client', 'placement', 'start_time', 'stop_time')
+    # list_display_links = ('title', 'slug')
+    # fieldsets = (
+    #     ('Основная информация', {'fields': ('title', 'slug', 'parent',)}),
+    #     ('Описание', {'fields': ('description',)})
+    # )
+@admin.register(ViewCount)
+class ViewCountAdmin(admin.ModelAdmin):
+
+    list_display = ('reklama', 'ip_address', 'viewed_on')
+
+
 
 # Register your models here.
