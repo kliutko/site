@@ -38,3 +38,9 @@ def popular_articles():
     # сортируем статьи по количеству просмотров в порядке убывания, сначала по просмотрам за сегодня, затем за все время
     popular_articles = articles.order_by('-total_view_count', '-today_view_count')[:10]
     return popular_articles
+
+@register.simple_tag
+def system_tags():
+    tags = Tag.objects.annotate(num_times=Count('article')).order_by('-num_times')
+    tag_list = list(tags.values('name', 'num_times', 'slug'))
+    return tag_list

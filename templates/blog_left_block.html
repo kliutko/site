@@ -1,0 +1,197 @@
+{% load static %}
+{% load mptt_tags %}
+
+<br>
+<section class="boxed-sm">
+        <div class="container">
+          <div class="row main">
+            <div class="col-md-3">
+              <div class="sidebar">
+                <div class="widget widget-search">
+                  <form class="Orchid-form form-inline btn-add-on border no-radius" role="search" method="get" action="{% url 'blog:search' %}">
+                    <div class="form-group">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name='do' autocomplete="off" id="search">
+
+                      <button class="btn btn-brand" type="submit">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+<!--reklama left-->
+                  <div class="widget widget-blog-post">
+                  <h4 class="title text-center">Реклама</h4>
+                  <ul class="list-blog">
+                    <li>
+                        {% if left_blog %}
+                        {% for banner in left_blog %}
+                     <a href="{{ banner.urls }}">
+                          <div class="desc">
+                        </div>
+                          <p>
+                        <div class="img-wrapper">
+                          <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}">
+                        </div>
+                          </p>
+                          <p>
+                          <h4 class="title">{{ banner.title }}</h4>
+                              </p>
+                          </a>
+                          <p>
+                          <h9>{{ banner.description|truncatewords:30|safe }}</h9>
+                              </p>
+                          <a class="read-more" href="{{ banner.get_absolute_url }}">{{ banner.text_url }}
+                        <i class="fa fa-long-arrow-right"></i>
+                              </a>
+                          {% endfor %}
+                          {% else %}
+                        <a href="{{ banner.urls }}">
+                         <img class="img-wrapper" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+                        </a>
+                            {% endif %}
+
+                    </li>
+                  </ul>
+                </div>
+<!--end reklama left-->
+
+<!--                  categories-->
+                <div class="widget widget-categories">
+                  <h4 class="title-widget text-center">Категории</h4>
+                  <ul>
+                        {% full_tree_for_model blog.Category as categories %}
+                        {% recursetree categories %}
+                        <li>
+                        <a href="{{ node.get_absolute_url }}">
+                        {{ node.title }}
+                        </a>
+                        {% if not node.is_leaf_node %}{% endif %}
+                        {{children}}
+                        {% if not node.is_leaf_node %}{% endif %}
+                        {% endrecursetree %}
+                        </li>
+                  </ul>
+                </div>
+<!--                   end categories-->
+
+<!--                  left block popular articles-->
+                <div class="widget widget-blog-post">
+                  <h4 class="title text-center">Популярные статьи</h4>
+                  <ul class="list-blog">
+                    <li>
+                        {% load blog_tags cache %}
+                        {% cache 300 sidebar %}
+                        {% popular_articles as articles_list %}
+                        {% for article in articles_list %}
+                      <a href="{{ article.get_absolute_url }}">
+                          <div class="desc">
+                              <p>
+                          <h2 class="title">{{ article.title }}</h2>
+<!--                              ({{ article.get_view_count }})-->
+                              </p>
+                        </div>
+                          <p>
+                        <div class="img-wrapper">
+                          <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}" width="300">
+                        </div>
+                          </p>
+                          <a class="read-more" href="{{ article.get_absolute_url }}">Читать далее...
+                        <i class="fa fa-long-arrow-right"></i>
+                      </a>
+                          {% empty %}
+				            <li>Популярных статей не найдено.</li>
+                          {% endfor %}
+                          {% endcache %}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+<!--                  end left block popular articles-->
+<!-- comments-->
+<!--         <div class="widget widget-categories">-->
+<!--                  <h4 class="title-widget text-center">Последние коментарии </h4>-->
+<!--                  <ul>-->
+<!--                    <li>-->
+<!--                      <a href="{{ show_latest_comments__article.get_absolute_url }}">{% show_latest_comments count=5 %}-->
+<!--                      </a>-->
+<!--                    </li>-->
+
+<!--                  </ul>-->
+<!--                </div>-->
+
+<!--    end comments-->
+
+
+
+                <div class="widget widget-categories">
+                  <h4 class="title-widget text-center">Archives</h4>
+                  <ul>
+                    <li>
+                      <a href="shop.html">March 2017
+                        <span>(5)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">Feberuary 2017
+                        <span>(7)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">January 2017
+                        <span>(9)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">December 2016
+                        <span>(10)</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="shop.html">November 2016
+                        <span>(6)</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+
+                  <!--reklama left_down_blog-->
+                  <div class="widget widget-blog-post">
+                  <h4 class="title text-center">Реклама</h4>
+                  <ul class="list-blog">
+                    <li>
+                        {% if left_down_blog %}
+                        {% for banner in left_down_blog %}
+                      <a href="{{ banner.urls }}">
+                          <div class="desc">
+                        </div>
+                          <p>
+                        <div class="img-wrapper">
+                          <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}">
+                        </div>
+                          </p>
+                          <p>
+                          <h4 class="title">{{ banner.title }}</h4>
+                              </p>
+                          </a>
+                          <p>
+                          <h9>{{ banner.description|truncatewords:30|safe }}</h9>
+                              </p>
+                          <a class="read-more" href="{{ banner.get_absolute_url }}">{{ banner.text_url }}
+                        <i class="fa fa-long-arrow-right"></i>
+                              </a>
+                          {% endfor %}
+                          {% else %}
+                        <a href="{{ banner.urls }}">
+                         <img class="img-wrapper" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+                        </a>
+                            {% endif %}
+
+                    </li>
+                  </ul>
+                </div>
+<!--end reklama left_down_blog-->
+              </div>
+            </div>
+<!--             end left block-->

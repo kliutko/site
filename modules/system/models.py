@@ -52,9 +52,12 @@ class Reklama(models.Model):
         ('header_banners_blog', 'Баннер в шапке раздела блог'),
         ('header_banners_news', 'Баннер в шапке раздела новости'),
         ('header_banners_all', 'Баннер в шапке сквозной'),
-        ('left_banners_blog', 'Баннер в левом блоке раздела блог'),
-        ('left_banners_news', 'Баннер в левом блоке раздела новости'),
-        ('left_banners_all', 'Баннер в левом блоке сквозной'),
+        ('left_blog', 'Баннер в левом блоке раздела блог'),
+        ('left_news', 'Баннер в левом блоке раздела новости'),
+        ('left_all', 'Баннер в левом блоке сквозной'),
+        ('left_down_blog', 'Баннер снизу в левом блоке раздела блог'),
+        ('left_down_news', 'Баннер снизу в левом блоке раздела новости'),
+        ('left_down_all', 'Баннер снизу в левом блоке сквозной'),
         ('footer_banners_blog', 'Баннер в низу раздела блог'),
         ('footer_banners_news', 'Баннер в низу раздела новости'),
         ('footer_banners_all', 'Баннер в низу сквозной'),
@@ -64,6 +67,7 @@ class Reklama(models.Model):
     title = models.CharField(verbose_name='Название', max_length=255)
     client = models.ForeignKey(to=User, verbose_name='Клиент', on_delete=models.CASCADE, blank=True, related_name='client_reklama')
     urls = models.URLField(verbose_name='URL', max_length=255, blank=True, unique=False)
+    text_url = models.CharField(verbose_name='Текст url', max_length=255, blank=True)
     description = models.TextField(verbose_name='Описание')
     thumbnail = models.ImageField(
         verbose_name='Изображение',

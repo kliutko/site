@@ -39,153 +39,7 @@
       {% endblock %}
 
       {% block content %}
-<br>
-<section class="boxed-sm">
-        <div class="container">
-          <div class="row main">
-            <div class="col-md-3">
-              <div class="sidebar">
-                <div class="widget widget-search">
-                  <form class="Orchid-form form-inline btn-add-on border no-radius" role="search" method="get" action="{% url 'blog:search' %}">
-                    <div class="form-group">
-        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name='do' autocomplete="off" id="search">
-
-                      <button class="btn btn-brand" type="submit">
-                        <i class="fa fa-search"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-<!--                  left block-->
-                <div class="widget widget-blog-post">
-                  <h4 class="title text-center">Recent Post</h4>
-                  <ul class="list-blog">
-                    <li>
-
-                      {% show_latest_comments count=5 %}
-                      <a href="blog-detail.html">
-                        <div class="img-wrapper">
-                          <img src="images/blog/thumb-01.jpg" alt="product">
-                        </div>
-                        <div class="desc">
-                          <h5 class="title">Growing Your...</h5>
-                          <p class="meta-time">January 02, 2017</p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="blog-detail.html">
-                        <div class="img-wrapper">
-                          <img src="images/blog/thumb-02.jpg" alt="product">
-                        </div>
-                        <div class="desc">
-                          <h5 class="title">Food Heaven...</h5>
-                          <p class="meta-time">December 23, 2016</p>
-
-<!--                            вывод популярных статей-->
-                            {% load blog_tags cache %}
-                            {% cache 300 sidebar %}
-<div class="card mb-2">
-	<div class="card-body">
-		<h5 class="card-title">Популярные статьи за 7 дней</h5>
-		<div class="card-text">
-			<ul>
-				{% popular_articles as articles_list %}
-        		{% for article in articles_list %}
-				<li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a> ({{ article.get_view_count }}) +({{ article.get_today_view_count}})</li>
-				{% empty %}
-				<li>Популярных статей не найдено.</li>
-				{% endfor %}
-			</ul>
-		</div>
-	</div>
-</div>
-                            {% endcache %}
-<!--                            end popular -->
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="blog-detail.html">
-                        <div class="img-wrapper">
-                          <img src="images/blog/thumb-03.jpg" alt="product">
-                        </div>
-                        <div class="desc">
-                          <h5 class="title">The Nutrition...</h5>
-                          <p class="meta-time">December 11, 2016</p>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="widget widget-categories">
-                  <h4 class="title-widget text-center">Categories</h4>
-                  <ul>
-                    <li>
-                      <a href="shop.html">Vegatable
-                        <span>(5)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">Meat
-                        <span>(7)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">Fruits
-                        <span>(9)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">Bestseller
-                        <span>(10)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">Orchid Food
-                        <span>(6)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">Healthy Benefit
-                        <span>(5)</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="widget widget-categories">
-                  <h4 class="title-widget text-center">Archives</h4>
-                  <ul>
-                    <li>
-                      <a href="shop.html">March 2017
-                        <span>(5)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">Feberuary 2017
-                        <span>(7)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">January 2017
-                        <span>(9)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">December 2016
-                        <span>(10)</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop.html">November 2016
-                        <span>(6)</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-<!--             end left block-->
+{% include 'blog_left_block.html' %}
 <!--              content block -->
             <br>
             <br>
@@ -195,19 +49,18 @@
                 <div class="col-md-12">
                   <div class="post">
                     <div class="img-wrapper">
-                      <a href="blog-detail.html">
+                      <a href="{{ article.get_absolute_url }}">
                          {% if article.thumbnail %}
                          <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
                          {% else %}
                          <img src="{% static 'images/blog/012.jpg' %}" alt="{{ article.title }}">
                          {% endif %}
-
                       </a>
                     </div>
                     <div class="desc">
                       <h3>
-                        <a href="blog-detail.html">{{ article.title }}</a>
-                        <a href="{{ category.get_absolute_url }}" class ="btn btn-primary">{{ article.category.title }}</a>
+                        <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                        <a href="{{ article.articles.get_absolute_url }}" class ="btn btn-primary">{{ article.category.title }}</a>
                       </h3>
                       <p class="meta">
                         <span class="time">{{ article.time_create }}</span>
@@ -246,7 +99,7 @@
         </div>
       </section>
 
-      {% endblock %}
+{% endblock %}
 
 
       {% block banerfooter %}
@@ -278,5 +131,5 @@
     {% endblock %}
 
 {% block script %}
-<script src="{% static 'custom/js/ratings.js' %}"></script>
+<script src="{% static 'js/ratings.js' %}"></script>
 {% endblock %}

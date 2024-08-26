@@ -43,11 +43,15 @@ class ArticleListView(ViewCountReklamaMixin, ListView):
     paginate_orphans = 0
     paginator_class = Paginator
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Блог'
+
         context['banner_header'] = Reklama.objects.all().filter(placement='header_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
         context['banner_footer'] = Reklama.objects.all().filter(placement='footer_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        context['left_blog'] = Reklama.objects.all().filter(placement='left_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        context['left_down_blog'] = Reklama.objects.all().filter(placement='left_down_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
 
         return context
 
@@ -71,6 +75,8 @@ class ArticleDetailView(ViewCountMixin, DeleteView):
         context['similar_articles'] = self.get_similar_articles(self.object)
         context['banner_header'] = Reklama.objects.all().filter(placement='header_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
         context['banner_footer'] = Reklama.objects.all().filter(placement='footer_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        context['left_blog'] = Reklama.objects.all().filter(placement='left_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        context['left_down_blog'] = Reklama.objects.all().filter(placement='left_down_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
 
         return context
 
