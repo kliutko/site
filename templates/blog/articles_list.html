@@ -3,14 +3,12 @@
 {% load mptt_tags %}
 {% load blog_tags %}
 
-
       {% block banerheader %}
       <br>
       <br>
       <br>
       <br>
       <section class="sub-header shop-layout-1">
-
           {% if banner_header %}
                     {% for banner in banner_header %}
                         <a href="{{ banner.urls }}">
@@ -41,6 +39,7 @@
       {% block content %}
 {% include 'blog_left_block.html' %}
 <!--              content block -->
+
             <br>
             <br>
             <div class="col-md-9">
@@ -64,9 +63,11 @@
                       </h3>
                       <p class="meta">
                         <span class="time">{{ article.time_create }}</span>
-                        <span class="comment">2</span>
-                          / Добавил: {{ article.author.username }}  / Просмотры: {{ article.get_view_count }}
-                      </p>
+                        <span class="comment">{{ article.get_count_comments }}</span>
+                          / Добавил:
+                      <a href="/users/{{ article.author.profile.slug }}">{{ article.author.username }}</a>
+                          / Просмотры: {{ article.get_view_count }}
+                  </p>
                       <p class="sapo">{{ article.description|truncatewords:55|safe }}</p>
 <!--rating-->
                 <div class="rating-buttons">
@@ -98,9 +99,7 @@
           </div>
         </div>
       </section>
-
 {% endblock %}
-
 
       {% block banerfooter %}
       <br>

@@ -137,6 +137,12 @@ class Article(models.Model):
         """
         return self.views.count()
 
+    def get_count_comments(self):
+        """
+        Возвращает количество просмотров для данной статьи
+        """
+        return self.comments.count()
+
     def get_today_view_count(self):
         """
         Возвращает количество просмотров для данной статьи за сегодняшний день

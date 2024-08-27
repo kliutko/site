@@ -1,0 +1,1271 @@
+[
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add site",
+        "content_type": [
+            "sites",
+            "site"
+        ],
+        "codename": "add_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change site",
+        "content_type": [
+            "sites",
+            "site"
+        ],
+        "codename": "change_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete site",
+        "content_type": [
+            "sites",
+            "site"
+        ],
+        "codename": "delete_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view site",
+        "content_type": [
+            "sites",
+            "site"
+        ],
+        "codename": "view_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Обратная связь",
+        "content_type": [
+            "system",
+            "feedback"
+        ],
+        "codename": "add_feedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Обратная связь",
+        "content_type": [
+            "system",
+            "feedback"
+        ],
+        "codename": "change_feedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Обратная связь",
+        "content_type": [
+            "system",
+            "feedback"
+        ],
+        "codename": "delete_feedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Обратная связь",
+        "content_type": [
+            "system",
+            "feedback"
+        ],
+        "codename": "view_feedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Категория",
+        "content_type": [
+            "blog",
+            "category"
+        ],
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Категория",
+        "content_type": [
+            "blog",
+            "category"
+        ],
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Категория",
+        "content_type": [
+            "blog",
+            "category"
+        ],
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Категория",
+        "content_type": [
+            "blog",
+            "category"
+        ],
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Статья",
+        "content_type": [
+            "blog",
+            "article"
+        ],
+        "codename": "add_article"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Статья",
+        "content_type": [
+            "blog",
+            "article"
+        ],
+        "codename": "change_article"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Статья",
+        "content_type": [
+            "blog",
+            "article"
+        ],
+        "codename": "delete_article"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Статья",
+        "content_type": [
+            "blog",
+            "article"
+        ],
+        "codename": "view_article"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Комментарий",
+        "content_type": [
+            "blog",
+            "comment"
+        ],
+        "codename": "add_comment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Комментарий",
+        "content_type": [
+            "blog",
+            "comment"
+        ],
+        "codename": "change_comment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Комментарий",
+        "content_type": [
+            "blog",
+            "comment"
+        ],
+        "codename": "delete_comment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Комментарий",
+        "content_type": [
+            "blog",
+            "comment"
+        ],
+        "codename": "view_comment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Профиль",
+        "content_type": [
+            "users",
+            "profile"
+        ],
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Профиль",
+        "content_type": [
+            "users",
+            "profile"
+        ],
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Профиль",
+        "content_type": [
+            "users",
+            "profile"
+        ],
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Профиль",
+        "content_type": [
+            "users",
+            "profile"
+        ],
+        "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add tag",
+        "content_type": [
+            "taggit",
+            "tag"
+        ],
+        "codename": "add_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change tag",
+        "content_type": [
+            "taggit",
+            "tag"
+        ],
+        "codename": "change_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete tag",
+        "content_type": [
+            "taggit",
+            "tag"
+        ],
+        "codename": "delete_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view tag",
+        "content_type": [
+            "taggit",
+            "tag"
+        ],
+        "codename": "view_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add tagged item",
+        "content_type": [
+            "taggit",
+            "taggeditem"
+        ],
+        "codename": "add_taggeditem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change tagged item",
+        "content_type": [
+            "taggit",
+            "taggeditem"
+        ],
+        "codename": "change_taggeditem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete tagged item",
+        "content_type": [
+            "taggit",
+            "taggeditem"
+        ],
+        "codename": "delete_taggeditem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view tagged item",
+        "content_type": [
+            "taggit",
+            "taggeditem"
+        ],
+        "codename": "view_taggeditem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Рейтинг",
+        "content_type": [
+            "blog",
+            "rating"
+        ],
+        "codename": "add_rating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Рейтинг",
+        "content_type": [
+            "blog",
+            "rating"
+        ],
+        "codename": "change_rating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Рейтинг",
+        "content_type": [
+            "blog",
+            "rating"
+        ],
+        "codename": "delete_rating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Рейтинг",
+        "content_type": [
+            "blog",
+            "rating"
+        ],
+        "codename": "view_rating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Просмотр",
+        "content_type": [
+            "blog",
+            "viewcount"
+        ],
+        "codename": "add_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Просмотр",
+        "content_type": [
+            "blog",
+            "viewcount"
+        ],
+        "codename": "change_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Просмотр",
+        "content_type": [
+            "blog",
+            "viewcount"
+        ],
+        "codename": "delete_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Просмотр",
+        "content_type": [
+            "blog",
+            "viewcount"
+        ],
+        "codename": "view_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Просмотр",
+        "content_type": [
+            "system",
+            "viewcount"
+        ],
+        "codename": "add_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Просмотр",
+        "content_type": [
+            "system",
+            "viewcount"
+        ],
+        "codename": "change_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Просмотр",
+        "content_type": [
+            "system",
+            "viewcount"
+        ],
+        "codename": "delete_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Просмотр",
+        "content_type": [
+            "system",
+            "viewcount"
+        ],
+        "codename": "view_viewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Реклама",
+        "content_type": [
+            "system",
+            "reklama"
+        ],
+        "codename": "add_reklama"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Реклама",
+        "content_type": [
+            "system",
+            "reklama"
+        ],
+        "codename": "change_reklama"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Реклама",
+        "content_type": [
+            "system",
+            "reklama"
+        ],
+        "codename": "delete_reklama"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Реклама",
+        "content_type": [
+            "system",
+            "reklama"
+        ],
+        "codename": "view_reklama"
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$sWKzqhPwdcEYHQd1AYAWs6$8EDfop5ECDVFz1cZ0Aes2jmmDc99/Z1tWtW5TSsSc00=",
+        "last_login": "2024-08-26T19:01:01.395Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-08-21T14:10:00.783Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$870000$eopfOfFiFZXa3wvgI0IQxp$7JAy1kT33G3NwBoRXtHxnhq662M0Sb4z2xFfkc/4eLM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "kliutko",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-08-22T08:07:12.804Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sites.site",
+    "fields": {
+        "domain": "selfincome.ru",
+        "name": "selfincome.ru"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "emc50unccm1a5luuwqepema9nazrghr8",
+    "fields": {
+        "session_data": ".eJxVizEOwjAQBP_iGkW2yYUzJT0ltXX2bWREIBLGFeLvJFIKKHd25m2itFeJreIZr2qOxpndL0uSb3isx33WNqF2K67dxmt3WeZ5VkynzfzLi9SytMyOxmSRFZacDeoTB1bmBKG9B8Q7HzI5IVEKebRW04BDFhl6aG8-X5UPOEA:1siatG:5Sty2gUSTN8qZSh1cuYHZLWzdOl6o3PwD7VwU1eAYtE",
+        "expire_date": "2024-09-09T14:40:18.691Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "yl5e7llvk2pwriin2v2rfts9hebh7dnu",
+    "fields": {
+        "session_data": ".eJxVizsOwjAQBe_iGlnrOP6Ekp6S2lrvrmVEIBLGFeLuJFIKKN-8mbdK2F819SbPdGV1VEYdfllGusljO-4L91ma3nDTO2_6ss7zwjKfdvMvr9jq2nqx2ZgsNDoAiIaHGMuITJ5KIA4FUCBEz8ZbttEMrkw4MTDnIk5Ifb6QIDhC:1sh2pz:b6kaWFWiKs5HOIU4pMvWWMsbfT0UjjH6J0l7HfOBBYk",
+        "expire_date": "2024-09-05T08:06:31.622Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "z6bp6paldxcah4rj65hqpfayp4zw1r56",
+    "fields": {
+        "session_data": ".eJxVizEOwjAQBP_iGkW2yYUzJT0ltXX2bWREIBLGFeLvJFIKKHd25m2itFeJreIZr2qOxpndL0uSb3isx33WNqF2K67dxmt3WeZ5VkynzfzLi9SytMyOxmSRFZacDeoTB1bmBKG9B8Q7HzI5IVEKebRW04BDFhl6aG8-X5UPOEA:1shpiJ:KuDXKJ6PDe6vQJ-__wof62hsarvspnhgv52tF1iZzIw",
+        "expire_date": "2024-09-07T12:17:51.185Z"
+    }
+},
+{
+    "model": "system.feedback",
+    "pk": 1,
+    "fields": {
+        "subject": "dfgdf",
+        "email": "kliutko.fr@yandex.ru",
+        "content": "gdfgdfgdfg df",
+        "time_create": "2024-08-22T08:40:42.160Z",
+        "ip_address": "127.0.0.1",
+        "user": [
+            "admin"
+        ]
+    }
+},
+{
+    "model": "system.feedback",
+    "pk": 2,
+    "fields": {
+        "subject": "fdghdfg",
+        "email": "kliutko.fr@yandex.ru",
+        "content": "gfhdfdgh fdg 111",
+        "time_create": "2024-08-22T08:42:48.213Z",
+        "ip_address": "127.0.0.1",
+        "user": [
+            "admin"
+        ]
+    }
+},
+{
+    "model": "system.reklama",
+    "pk": 1,
+    "fields": {
+        "title": "рекламное место",
+        "client": [
+            "kliutko"
+        ],
+        "urls": "http://127.0.0.1:8000/blog/",
+        "description": "рекламное место",
+        "thumbnail": "images/reklama/2024/08/23/Текст_абзаца_Kk1B0Dr.png",
+        "status": "stopped",
+        "placement": "header_banners_blog",
+        "start_time": "2024-08-08T13:14:17Z",
+        "stop_time": "2024-08-24T14:10:00Z"
+    }
+},
+{
+    "model": "system.reklama",
+    "pk": 2,
+    "fields": {
+        "title": "2 рекламное место",
+        "client": [
+            "kliutko"
+        ],
+        "urls": "http://127.0.0.1:8000/blog/1",
+        "description": "fds fsd",
+        "thumbnail": "images/reklama/2024/08/23/Текст_абзаца_SoFBqIZ.png",
+        "status": "stopped",
+        "placement": "footer_banners_blog",
+        "start_time": "2024-08-21T14:34:20Z",
+        "stop_time": "2024-08-31T14:34:20Z"
+    }
+},
+{
+    "model": "system.reklama",
+    "pk": 3,
+    "fields": {
+        "title": "рекламное место 2",
+        "client": [
+            "kliutko"
+        ],
+        "urls": "http://127.0.0.1:8000/blog/",
+        "description": "erwf we hg fg",
+        "thumbnail": "images/reklama/2024/08/23/Текст_абзаца_jyCmmdY.png",
+        "status": "stopped",
+        "placement": "header_banners_blog",
+        "start_time": "2024-08-22T14:48:40Z",
+        "stop_time": "2024-08-24T14:48:41Z"
+    }
+},
+{
+    "model": "system.reklama",
+    "pk": 4,
+    "fields": {
+        "title": "левый блог",
+        "client": [
+            "kliutko"
+        ],
+        "urls": "http://127.0.0.1:8000/blog/",
+        "description": "левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог левый блог",
+        "thumbnail": "images/reklama/2024/08/26/2560x1721_1080545_www.ArtFile.ru.jpg",
+        "status": "stopped",
+        "placement": "left_down_blog",
+        "start_time": "2024-08-13T15:13:42Z",
+        "stop_time": "2024-08-30T15:13:47Z"
+    }
+},
+{
+    "model": "system.reklama",
+    "pk": 5,
+    "fields": {
+        "title": "реклама сверху слева1",
+        "client": [
+            "kliutko"
+        ],
+        "urls": "http://127.0.0.1:8000/blog/",
+        "description": "реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева реклама сверху слева",
+        "thumbnail": "images/reklama/2024/08/26/2560x1721_1080545_www.ArtFile.ru_rEsCqZh.jpg",
+        "status": "inwork",
+        "placement": "left_blog",
+        "start_time": "2024-08-13T15:13:42Z",
+        "stop_time": "2024-08-30T15:13:47Z"
+    }
+},
+{
+    "model": "system.reklama",
+    "pk": 6,
+    "fields": {
+        "title": "реклама сверху слева 2",
+        "client": [
+            "admin"
+        ],
+        "urls": "http://127.0.0.1:8000/blog/",
+        "description": "реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2 реклама сверху слева 2",
+        "thumbnail": "images/reklama/2024/08/26/012.jpg",
+        "status": "inwork",
+        "placement": "left_blog",
+        "start_time": "2024-08-06T17:53:04Z",
+        "stop_time": "2024-08-28T17:53:06Z"
+    }
+},
+{
+    "model": "blog.category",
+    "pk": 1,
+    "fields": {
+        "title": "1 блюда",
+        "slug": "1-blyuda",
+        "description": "1 блюда",
+        "parent": null,
+        "lft": 1,
+        "rght": 4,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "blog.category",
+    "pk": 2,
+    "fields": {
+        "title": "супы",
+        "slug": "supy",
+        "description": "супы",
+        "parent": 1,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "blog.category",
+    "pk": 3,
+    "fields": {
+        "title": "kashi",
+        "slug": "supydsa",
+        "description": "fdgf dg df",
+        "parent": null,
+        "lft": 1,
+        "rght": 4,
+        "tree_id": 2,
+        "level": 0
+    }
+},
+{
+    "model": "blog.category",
+    "pk": 4,
+    "fields": {
+        "title": "rassipch",
+        "slug": "rassipch",
+        "description": "gsfdg",
+        "parent": 3,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 2,
+        "level": 1
+    }
+},
+{
+    "model": "blog.article",
+    "pk": 1,
+    "fields": {
+        "title": "1 тестовая статья",
+        "slug": "1-testovaya-statya",
+        "description": "<p>1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья 1 тестовая статья</p>",
+        "thumbnail": "images/thumbnails/2024/08/21/2560x1721_1080545_www.ArtFile.ru.jpg",
+        "status": "published",
+        "time_create": "2024-08-21T14:12:31.810Z",
+        "time_update": "2024-08-21T15:15:47.141Z",
+        "author": [
+            "admin"
+        ],
+        "updater": null,
+        "fixed": false,
+        "category": [
+            2
+        ]
+    }
+},
+{
+    "model": "blog.article",
+    "pk": 2,
+    "fields": {
+        "title": "2 тестовая статья",
+        "slug": "2-testovaya-statya",
+        "description": "2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья 2 тестовая статья",
+        "thumbnail": "images/thumbnails/2024/08/21/2560x1721_1080545_www_nbO2mdj.ArtFile.ru.jpg",
+        "status": "published",
+        "time_create": "2024-08-21T14:12:51.460Z",
+        "time_update": "2024-08-21T14:12:51.460Z",
+        "author": [
+            "admin"
+        ],
+        "updater": null,
+        "fixed": false,
+        "category": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "blog.article",
+    "pk": 3,
+    "fields": {
+        "title": "1 пост с сайта",
+        "slug": "1-post-s-sajta",
+        "description": "<p>11 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта 1 пост с сайта&nbsp;</p>",
+        "thumbnail": "images/thumbnails/2024/08/21/2560x1721_1080545_www_W7jKGcx.ArtFile.ru.jpg",
+        "status": "published",
+        "time_create": "2024-08-21T15:25:58.959Z",
+        "time_update": "2024-08-21T15:25:58.968Z",
+        "author": [
+            "admin"
+        ],
+        "updater": null,
+        "fixed": false,
+        "category": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "blog.comment",
+    "pk": 3,
+    "fields": {
+        "article": 3,
+        "author": [
+            "kliutko"
+        ],
+        "content": "e12 dsa das d",
+        "time_create": "2024-08-26T18:42:01.282Z",
+        "time_update": "2024-08-26T18:42:01.282Z",
+        "status": "published",
+        "parent": null,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 1,
+    "fields": {
+        "article": 3,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-22T09:01:20.494Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 2,
+    "fields": {
+        "article": 2,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-22T09:03:14.546Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 3,
+    "fields": {
+        "article": 1,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-22T11:21:36.309Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 4,
+    "fields": {
+        "article": 3,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-23T15:35:28.317Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 5,
+    "fields": {
+        "article": 2,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-24T12:03:09.184Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 6,
+    "fields": {
+        "article": 1,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-24T12:18:05.156Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 7,
+    "fields": {
+        "article": 3,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-24T15:54:44.508Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 8,
+    "fields": {
+        "article": 2,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-26T16:17:47.679Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 9,
+    "fields": {
+        "article": 3,
+        "ip_address": "127.0.0.1",
+        "viewed_on": "2024-08-26T16:47:43.545Z"
+    }
+},
+{
+    "model": "users.profile",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "admin"
+        ],
+        "slug": "admin",
+        "avatar": "images/avatars/default.png",
+        "bio": "",
+        "birth_date": null,
+        "following": []
+    }
+},
+{
+    "model": "users.profile",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "kliutko"
+        ],
+        "slug": "kliutko",
+        "avatar": "images/avatars/default.png",
+        "bio": "",
+        "birth_date": null,
+        "following": []
+    }
+},
+{
+    "model": "taggit.tag",
+    "fields": {
+        "name": "суп",
+        "slug": "суп"
+    }
+},
+{
+    "model": "taggit.taggeditem",
+    "fields": {
+        "tag": [
+            "суп"
+        ],
+        "content_type": [
+            "blog",
+            "article"
+        ],
+        "object_id": 1
+    }
+},
+{
+    "model": "taggit.taggeditem",
+    "fields": {
+        "tag": [
+            "суп"
+        ],
+        "content_type": [
+            "blog",
+            "article"
+        ],
+        "object_id": 2
+    }
+}
+]
