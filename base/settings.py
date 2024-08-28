@@ -37,8 +37,8 @@ EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 
-EMAIL_HOST_USER = 'kliutko.fr@yandex.by'
-EMAIL_HOST_PASSWORD = 'uocvkhbbuipkpodl'
+EMAIL_HOST_USER = 'help-selfincome@yandex.ru'
+EMAIL_HOST_PASSWORD = 'ztzgdooxbmlmvhcn'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
@@ -215,7 +215,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+CKEDITOR_5_UPLOAD_FILE_TYPES = ['jpeg', 'jpg', 'png']
 CKEDITOR_5_FILE_STORAGE = 'modules.services.utils.CkeditorCustomStorage'
 
 customColorPalette = [

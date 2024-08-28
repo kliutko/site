@@ -1,0 +1,101 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mptt_tags %}
+
+      {% block banerheader %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+        <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+        <div class="overlay-call-to-action"></div>
+        <h3 class="heading-style-3">{{ title }}</h3>
+      </section>
+      {% endblock %}
+
+
+      {% block imagecategory %}
+      {% endblock %}
+
+      {% block products %}
+      {% endblock %}
+
+      {% block bannerbody %}
+      {% endblock %}
+
+      {% block content %}
+     {% include 'blog_left_block.html' %}
+
+              <!--                  body-->
+              <br>
+              <div class="col-md-9">
+                <article class="blog-detail">
+                    {% for conf in conf %}
+                  <h3 class="title-blog-detail">{{ conf.title }}</h3>
+                  <div class="content">
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h4></h4>
+                        <p>{{ conf.description|safe }}</p>
+                      </div>
+                    </div>
+ {% endfor %}
+                  </div>
+
+                </article>
+
+
+
+     </div>
+     </div>
+     </div>
+     </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+
+{% endblock %}
+{% block sidebar %}
+
+
+      {% endblock %}
+
+  {% block banerfooter %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+
+          {% if banner_footer %}
+                    {% for banner in banner_footer %}
+                        <a href="{{ banner.urls }}">
+                         <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}" width="1200" height="250" >
+                        </a>
+                        <div class="overlay-call-to-action"></div>
+                    {% endfor %}
+                         {% else %}
+                         <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+
+        <div class="overlay-call-to-action"></div>
+
+          {% endif %}
+
+      </section>
+      {% endblock %}
+    {% block subscribe %}
+    {% endblock %}
+
+{% block script %}
+
+{% endblock%}

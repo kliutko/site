@@ -1,0 +1,93 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mptt_tags %}
+
+      {% block banerheader %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+        <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+        <div class="overlay-call-to-action"></div>
+        <h3 class="heading-style-3">{{ title }}</h3>
+      </section>
+      {% endblock %}
+
+
+      {% block imagecategory %}
+      {% endblock %}
+
+      {% block products %}
+      {% endblock %}
+
+      {% block bannerbody %}
+      {% endblock %}
+
+      {% block content %}
+<br>
+<section class="boxed-sm">
+        <div class="container">
+            <h3></h3>
+              {% for faq in faq %}
+          <div class="faq-wrapper">
+            <div class="row">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="more-less fa fa-angle-down"></i>{{ faq.title }}</a>
+                    </h4>
+                  </div>
+                  <div class="panel-heading" role="tab">
+                    <div class="panel-body">{{ faq.description|safe }}</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- panel-group-->
+            </div>
+
+          </div>
+            {% endfor %}
+        </div>
+      </section>
+
+{% endblock %}
+{% block sidebar %}
+
+
+      {% endblock %}
+
+  {% block banerfooter %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+
+          {% if banner_footer %}
+                    {% for banner in banner_footer %}
+                        <a href="{{ banner.urls }}">
+                         <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}" width="1200" height="250" >
+                        </a>
+                        <div class="overlay-call-to-action"></div>
+                    {% endfor %}
+                         {% else %}
+                         <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+
+        <div class="overlay-call-to-action"></div>
+
+          {% endif %}
+
+      </section>
+      {% endblock %}
+    {% block subscribe %}
+    {% endblock %}
+
+{% block script %}
+
+{% endblock%}

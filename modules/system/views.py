@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
 from .forms import FeedbackCreateForm
-from .models import Feedback, About
+from .models import Feedback, About, Faq, Conf
 
 from ..services.utils import get_client_ip
 from django.shortcuts import render
@@ -28,6 +28,16 @@ class IndexListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Главная страница'
+        return context
+
+class FaqListView(ListView):
+    model = Faq
+    template_name = 'system/faq_demo.html'
+    context_object_name = 'faq'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Часто задаваемые вопросы'
         return context
 
 
@@ -69,6 +79,15 @@ class FeedbackCreateView(SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
+class ConfListView(ListView):
+    model = Conf
+    template_name = 'system/conf.html'
+    context_object_name = 'conf'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Политика конфедициальности'
+        return context
 
 
 def tr_handler404(request, exception):
