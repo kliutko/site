@@ -4,6 +4,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 
+from django.urls import reverse
+from django_ckeditor_5.fields import CKEditor5Field
+
+from modules.services.utils import unique_slugify, image_compress
 
 User = get_user_model()
 
@@ -42,7 +46,6 @@ class Reklama(models.Model):
         # def all(self):
         #     return self.get_queryset().select_related('title').prefetch_related('views').filter(
         #         status='inwork')
-
 
     STATUS_OPTIONS = (
         ('inwork', 'В работе'),
@@ -130,3 +133,43 @@ class ViewCount(models.Model):
 
     def __str__(self):
         return self.article.title
+
+
+class About(models.Model):
+    """
+    pip install pillow для работы ImageField
+    """
+    title = models.CharField(verbose_name='Заголовок '
+                                          'Для отображения на сайте редактируется 1 пост', max_length=255)
+    slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
+    description = CKEditor5Field(verbose_name='Описание', config_name='extends')
+    thumbnail = models.ImageField(
+        verbose_name='превью поста',
+        blank=True,
+        upload_to='images/thumbnails/%Y/%m/%d/',
+        validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'webp', 'jpeg', 'gif'))]
+
+    )
+    class Meta:
+        db_table = 'system_about'
+        verbose_name = 'Страница о сайте'
+        verbose_name_plural = 'Страница о сайте'
+    def __str__(self):
+        return f'{self.title}'
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__thumbnail = self.thumbnail if self.pk else None
+    def get_absolute_url(self):
+        return reverse('system:about', kwargs={'slug': self.slug})
+    def save(self, *args, **kwargs):
+        """
+        Сохранение полей модели при их отсутствии
+        """
+        if not self.slug:
+            self.slug = unique_slugify(self, self.title)
+        super().save(*args, **kwargs)
+        if self.__thumbnail != self.thumbnail and self.thumbnail:
+            image_compress(self.thumbnail.path, width=400, height=400)
+
+
+

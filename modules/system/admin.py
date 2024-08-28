@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Feedback, Reklama, ViewCount
+from .models import Feedback, Reklama, ViewCount, About
 
 
 @admin.register(Feedback)
@@ -22,6 +22,15 @@ class ReklamaAdmin(admin.ModelAdmin):
     #     ('Основная информация', {'fields': ('title', 'slug', 'parent',)}),
     #     ('Описание', {'fields': ('description',)})
     # )
+@admin.register(About)
+class StaticPageAdmin(admin.ModelAdmin):
+
+    list_display = ('title',)
+    # list_display_links = ('title', 'slug')
+    # fieldsets = (
+    #     ('Основная информация', {'fields': ('title', 'slug', 'parent',)}),
+    #     ('Описание', {'fields': ('description',)})
+
 @admin.register(ViewCount)
 class ViewCountAdmin(admin.ModelAdmin):
 

@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DeleteView, CreateView, UpdateView
+from django.views.generic import ListView, DeleteView, CreateView, UpdateView, DetailView
 
 from .mixins import ViewCountMixin
 from .models import Article, Category
@@ -20,9 +20,7 @@ import random
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from datetime import date
-
 from django.views.generic import View
-
 from .models import Rating
 from ..services.utils import get_client_ip
 from ..system.mixins import ViewCountReklamaMixin
@@ -55,7 +53,7 @@ class ArticleListView(ViewCountReklamaMixin, ListView):
 
         return context
 
-class ArticleDetailView(ViewCountMixin, DeleteView):
+class ArticleDetailView(ViewCountMixin, DetailView):
     model = Article
     template_name = 'blog/articles_detail.html'
     context_object_name = 'article'

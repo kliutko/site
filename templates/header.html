@@ -1,5 +1,6 @@
 {% load static %}
 {% load mptt_tags %}
+{% load system_tags %}
 <header class="header-style-1">
         <div class="container">
           <div class="row">
@@ -52,9 +53,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li>
-                    <a href="about.html">About</a>
-                  </li>
+
                   <li>
                     <a href="{% url 'blog:blog' %}">Блог</a>
                     <ul>
@@ -80,7 +79,13 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="contact.html">Contact</a>
+                    {% tag_about as tag_about %}
+                    {% for about in tag_about %}
+                    <a href="{{ about.get_absolute_url }}">О сайте</a>
+                    {% endfor %}
+                  </li>
+                  <li>
+                    <a href="{% url 'system:feedback' %}">Contact</a>
                   </li>
                   <li>
                     <a href="faq.html">Feature</a>

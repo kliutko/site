@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DeleteView
+from django.views.generic import ListView, DeleteView, DetailView
 from modules.blog.models import Article, Category
 from django.db import models
 
@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
 from .forms import FeedbackCreateForm
-from .models import Feedback
+from .models import Feedback, About
 
 from ..services.utils import get_client_ip
 from django.shortcuts import render
@@ -30,6 +30,24 @@ class IndexListView(ListView):
         context['title'] = 'Главная страница'
         return context
 
+
+class AboutListView(DetailView):
+    model = About
+    template_name = 'system/about.html'
+    context_object_name = 'about'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = self.object.title
+        # context['form'] = CommentCreateForm
+        # context['similar_articles'] = self.get_similar_articles(self.object)
+        # context['banner_header'] = Reklama.objects.all().filter(placement='header_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        # context['banner_footer'] = Reklama.objects.all().filter(placement='footer_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        # context['left_blog'] = Reklama.objects.all().filter(placement='left_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+        # context['left_down_blog'] = Reklama.objects.all().filter(placement='left_down_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
+
+        return context
 
 
 

@@ -114,47 +114,28 @@
 <!--                    post -->
 
 
+ <div class="card-title">
+           Похожие статьи:
+                        </div>
+                    <div class="post-control">
+                        {% for sim_article in similar_articles %}
 
+                        <a href="{{ sim_article.get_absolute_url }}" class="title-next-post">{{ sim_article.title }}</a>
 
-
-<div class="card mb-2 border-0">
-    <div class="card-body">
-        <div class="card-title">
-           Похожие статьи
-        </div>
-        <div class="card-text">
-            <ul class="similar-articles">
-                {% for sim_article in similar_articles %}
-                    <li><a href="{{ sim_article.get_absolute_url }}">{{ sim_article.title }}</a></li>
                 {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
+                      </a>
+                    </div>
+
+
+
 
 {% block sidebar %}
 {% endblock %}
 
-                    
-
-
-                    <div class="post-control">
-                      <a class="prev-post" href="blog-detail.html">
-                        <i class="fa fa-angle-left"></i>PREVIOUSE POST
-                        <h4 class="title-next-post">Soup recipes</h4>
-                      </a>
-                      <a class="next-post" href="blog-detail.html">NEXT POST
-                        <i class="fa fa-angle-right"></i>
-                        <h4 class="title-next-post">Green Vegetables Are Good For Healthy</h4>
-                      </a>
-                    </div>
 <!--                    posts-->
                   </div>
                 </div>
 <!--                comments-->
-
-
-
 		<div class="card border-0">
 	<div class="card-body">
 		<h5 class="card-title">
@@ -175,14 +156,35 @@
         </div>
       </section>
     </div>
-
-
-
       {% endblock %}
 
+  {% block banerfooter %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
 
+          {% if banner_footer %}
+                    {% for banner in banner_footer %}
+                        <a href="{{ banner.urls }}">
+                         <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}" width="1200" height="250" >
+                        </a>
+                        <div class="overlay-call-to-action"></div>
+                    {% endfor %}
+                         {% else %}
+                         <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+
+        <div class="overlay-call-to-action"></div>
+
+          {% endif %}
+
+      </section>
+      {% endblock %}
     {% block subscribe %}
     {% endblock %}
+
+
 
 {% block script %}
 <script src="{% static 'custom/js/ratings.js' %}"></script>
