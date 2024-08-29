@@ -24,7 +24,8 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True, verbose_name='Информация о себе')
     birth_date = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
     following = models.ManyToManyField('self', verbose_name='Подписки', related_name='followers', symmetrical=False, blank=True)
-    
+    agree_rules = models.BooleanField(default=False)
+    agree_conf = models.BooleanField(default=False)
 
 
     class Meta:

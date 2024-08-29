@@ -42,14 +42,22 @@
         <div class="container">
           <div class="login-wrapper">
             <div class="row">
-              <h3>Регистрация</h3>
+              <h3>Авторизация</h3>
 
-                <form method="post" action="{% url 'users:register' %}" enctype="multipart/form-data">
+                <form method="post" action="{% url 'users:login' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
+                <br>
+                    <div class="form-group remember-me">
+                  <div class="checkbox pull-left">
+                    <label>
 
+                    </label>
+                  </div>
+                  <a class="pull-right" href="{% url 'users:password_reset' %}">Забыли пароль?</a>
+                </div>
                 <div class="form-group footer-form">
-                 <button class="btn btn-brand pill" type="submit">Зарегистрироватся</button>
+                 <button class="btn btn-brand pill" type="submit">Войти</button>
                 </div>
                 </form>
 

@@ -131,18 +131,30 @@
               <div class="list-link">
                 <h4 class="h4 heading">Личный кабинет</h4>
                 <ul>
-                  <li>
-                    <a href="#">Sign In</a>
-                  </li>
-                  <li>
-                    <a href="#">My Cart</a>
-                  </li>
-                  <li>
-                    <a href="#">My Wishlist</a>
-                  </li>
-                  <li>
-                    <a href="#">Check Out</a>
-                  </li>
+                  {% if user.is_authenticated %}
+                             <li>
+                                <a href="{% url 'users:profile_detail' request.user.profile.slug %}" >Профиль</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'users:logout' %}"> Выход</a>
+                            </li>
+
+                            {% else %}
+                            <li>
+                                <a href="{% url 'users:login' %}" >Вход</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'users:register' %}"> Регистрация</a>
+                            </li>
+
+                            {% endif %}
+
+                            {% if user.is_superuser or user.is_staff %}
+                            <li>
+                                <a href="{% url 'admin:login' %}"> Админ панель </a>
+                            </li>
+                            {% endif %}
+
                 </ul>
               </div>
             </div>

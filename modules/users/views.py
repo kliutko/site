@@ -20,6 +20,7 @@ from django.views.generic import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from modules.blog.models import Article
 from modules.services.tasks import send_activate_email_message_task
+from django.contrib.auth import logout
 
 User = get_user_model()
 
@@ -79,7 +80,7 @@ class UserRegisterView(UserIsNotAuthenticated, CreateView):
     Представление регистрации на сайте с формой регистрации
     """
     form_class = UserRegisterForm
-    success_url = reverse_lazy('blog:home')
+    success_url = reverse_lazy('blog:blog')
     template_name = 'users/registration/user_register.html'
 
     # success_message = 'Вы успешно зарегистрировались. Можете войти на сайт!'
@@ -102,7 +103,7 @@ class UserLoginView(UserIsNotAuthenticated, LoginView):
     """
     form_class = UserLoginForm
     template_name = 'users/user_login.html'
-    next_page = 'blog:home'
+    next_page = 'blog:blog'
     success_message = 'Добро пожаловать на сайт!'
 
     def get_context_data(self, **kwargs):
@@ -111,10 +112,9 @@ class UserLoginView(UserIsNotAuthenticated, LoginView):
         return context
 
 class UserLogoutView(LogoutView):
-    """
-    Выход с сайта
-    """
-    next_page = 'blog:home'
+    def get(self, request):
+        logout(request)
+        return redirect('blog:blog')
 
 class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView):
     """
@@ -144,7 +144,7 @@ class UserForgotPasswordView(SuccessMessageMixin, PasswordResetView):
     """
     form_class = UserForgotPasswordForm
     template_name = 'users/user_password_reset.html'
-    success_url = reverse_lazy('blog:home')
+    success_url = reverse_lazy('blog:blog')
     success_message = 'Письмо с инструкцией по восстановлению пароля отправлена на ваш email'
     subject_template_name = 'users/email/password_subject_reset_mail.txt'
     email_template_name = 'users/email/password_reset_mail.html'
@@ -161,7 +161,7 @@ class UserPasswordResetConfirmView(SuccessMessageMixin, PasswordResetConfirmView
     """
     form_class = UserSetNewPasswordForm
     template_name = 'users/user_password_set_new.html'
-    success_url = reverse_lazy('blog:home')
+    success_url = reverse_lazy('users:login')
     success_message = 'Пароль успешно изменен. Можете авторизоваться на сайте.'
 
     def get_context_data(self, **kwargs):
