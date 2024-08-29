@@ -12,7 +12,7 @@ class AuthorRequiredMixin(AccessMixin):
         if request.user.is_authenticated:
             if request.user == self.get_object().author or request.user.is_staff:
                 return super().dispatch(request, *args, **kwargs)
-            return redirect('blog:home')
+            return redirect('blog:blog')
             messages.info(request, 'Изменение и удаление статьи доступно только автору')
 
 
@@ -24,5 +24,5 @@ class UserIsNotAuthenticated(UserPassesTestMixin):
         return True
 
     def handle_no_permission(self):
-        return redirect('blog:home')
+        return redirect('blog:blog')
         messages.info(request, 'Изменение и удаление статьи доступно только автору')

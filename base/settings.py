@@ -75,7 +75,12 @@ CACHES = {
     }
 }
 
-
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.base.filebased.FileBasedCache',
+#         'LOCATION': (BASE_DIR / 'cache'),
+#     }
+# }
 
 
 
@@ -114,6 +119,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'modules.system.middleware.ActiveUserMiddleware',
+    'modules.users.middleware.ActiveUserMiddleware',
 ]
 
 INTERNAL_IPS = [

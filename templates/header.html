@@ -13,6 +13,9 @@
                   <li>
                     <a href="{% url 'blog:blog' %}">Главная</a>
                   </li>
+                    <li>
+                    <a href="{% url 'blog:articles_by_signed_user' %}">Лента</a>
+                  </li>
 <!--                  <li>-->
 <!--                    <a class="active" href="shop.html">Shop</a>-->
 <!--                    <ul>-->
@@ -102,9 +105,6 @@
                         <p>Политика </p>
                         <p>конфедициальности</p>
                     </a>
-                  </li>
-                  <li>
-                      <a href="{% url 'latest_articles_feed' %}">Подписаться на RSS</a>
                   </li>
                     </ul>
                   <li>
