@@ -218,6 +218,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CKEDITOR_5_UPLOAD_FILE_TYPES = ['jpeg', 'jpg', 'png']
 CKEDITOR_5_FILE_STORAGE = 'modules.services.utils.CkeditorCustomStorage'
 
+
 customColorPalette = [
         {
             'color': 'hsl(4, 90%, 58%)',

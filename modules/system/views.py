@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
 from .forms import FeedbackCreateForm
-from .models import Feedback, About, Faq, Conf
+from .models import Feedback, About, Faq, Conf, Rules, ReklamaInfo
 
 from ..services.utils import get_client_ip
 from django.shortcuts import render
@@ -38,6 +38,26 @@ class FaqListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Часто задаваемые вопросы'
+        return context
+
+class RulesListView(ListView):
+    model = Rules
+    template_name = 'system/rules.html'
+    context_object_name = 'rules'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Правила'
+        return context
+
+class ReklamaInfoListView(ListView):
+    model = ReklamaInfo
+    template_name = 'system/reklamainfo.html'
+    context_object_name = 'reklamainfo'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Реклама'
         return context
 
 

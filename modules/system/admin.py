@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Feedback, Reklama, ViewCount, About, Faq, Conf
+from .models import Feedback, Reklama, ViewCount, About, Faq, Conf, Rules, ReklamaInfo
 
 
 @admin.register(Feedback)
@@ -36,6 +36,14 @@ class FaqAdmin(admin.ModelAdmin):
 
 @admin.register(Conf)
 class ConfAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description')
+
+@admin.register(Rules)
+class RulesAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description')
+
+@admin.register(ReklamaInfo)
+class ReklamaInfoAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
 @admin.register(ViewCount)
 class ViewCountAdmin(admin.ModelAdmin):

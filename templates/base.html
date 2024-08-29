@@ -101,7 +101,7 @@
                     <a href="{% url 'system:faq' %}">FAQ</a>
                   </li>
                   <li>
-                    <a href="#">Реклама</a>
+                    <a href="{% url 'system:reklamainfo' %}">Реклама</a>
                   </li>
                     <li>
                     {% tag_about as tag_about %}
@@ -110,7 +110,7 @@
                     {% endfor %}
                   </li>
                     <li>
-                    <a href="#">Правила</a>
+                    <a href="{% url 'system:rules' %}">Правила</a>
                   </li>
                   <li>
                     <a href="{% url 'system:feedback' %}">Обратная связь</a>

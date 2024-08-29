@@ -212,82 +212,102 @@ class Conf(models.Model):
     pip install pillow для работы ImageField
     """
     title = models.CharField(verbose_name='Заголовок', max_length=255)
+    slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
     description = CKEditor5Field(verbose_name='Текст', config_name='extends')
-
+    thumbnail = models.ImageField(
+        verbose_name='превью поста',
+        blank=True,
+        upload_to='images/thumbnails/%Y/%m/%d/',
+        validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'webp', 'jpeg', 'gif'))],
+    )
     class Meta:
-        db_table = 'system_confederacy'
+        db_table = 'system_conf'
         verbose_name = 'Политика конфедициальности'
         verbose_name_plural = 'Политика конфедициальности'
     def __str__(self):
         return f'{self.title}'
 
-#
-# class Rules(models.Model):
-#     """
-#     pip install pillow для работы ImageField
-#     """
-#     title = models.CharField(verbose_name='Вопрос '
-#                                           '', max_length=255)
-#     slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
-#     description = CKEditor5Field(verbose_name='Ответ', config_name='extends')
-#     thumbnail = models.ImageField(
-#         verbose_name='превью поста',
-#         blank=True,
-#         upload_to='images/thumbnails/%Y/%m/%d/',
-#         validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'webp', 'jpeg', 'gif'))],
-#     )
-#     class Meta:
-#         db_table = 'system_faq'
-#         verbose_name = 'Часто задаваемые вопросы'
-#         verbose_name_plural = 'Часто задаваемые вопросы'
-#     def __str__(self):
-#         return f'{self.title}'
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         self.__thumbnail = self.thumbnail if self.pk else None
-#
-#     def save(self, *args, **kwargs):
-#         """
-#         Сохранение полей модели при их отсутствии
-#         """
-#         if not self.slug:
-#             self.slug = unique_slugify(self, self.title)
-#         super().save(*args, **kwargs)
-#         if self.__thumbnail != self.thumbnail and self.thumbnail:
-#             image_compress(self.thumbnail.path, width=400, height=400)
-#
-#
-#
-# class Reklama_info(models.Model):
-#     """
-#     pip install pillow для работы ImageField
-#     """
-#     title = models.CharField(verbose_name='Вопрос '
-#                                           '', max_length=255)
-#     slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
-#     description = CKEditor5Field(verbose_name='Ответ', config_name='extends')
-#     thumbnail = models.ImageField(
-#         verbose_name='превью поста',
-#         blank=True,
-#         upload_to='images/thumbnails/%Y/%m/%d/',
-#         validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'webp', 'jpeg', 'gif'))],
-#     )
-#     class Meta:
-#         db_table = 'system_faq'
-#         verbose_name = 'Часто задаваемые вопросы'
-#         verbose_name_plural = 'Часто задаваемые вопросы'
-#     def __str__(self):
-#         return f'{self.title}'
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         self.__thumbnail = self.thumbnail if self.pk else None
-#
-#     def save(self, *args, **kwargs):
-#         """
-#         Сохранение полей модели при их отсутствии
-#         """
-#         if not self.slug:
-#             self.slug = unique_slugify(self, self.title)
-#         super().save(*args, **kwargs)
-#         if self.__thumbnail != self.thumbnail and self.thumbnail:
-#             image_compress(self.thumbnail.path, width=400, height=400)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__thumbnail = self.thumbnail if self.pk else None
+
+    def save(self, *args, **kwargs):
+        """
+        Сохранение полей модели при их отсутствии
+        """
+        if not self.slug:
+            self.slug = unique_slugify(self, self.title)
+        super().save(*args, **kwargs)
+        if self.__thumbnail != self.thumbnail and self.thumbnail:
+            image_compress(self.thumbnail.path, width=400, height=400)
+
+
+class Rules(models.Model):
+    """
+    pip install pillow для работы ImageField
+    """
+    title = models.CharField(verbose_name='Заголовок '
+                                          '', max_length=255)
+    slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
+    description = CKEditor5Field(verbose_name='Текст', config_name='extends')
+    thumbnail = models.ImageField(
+        verbose_name='превью поста',
+        blank=True,
+        upload_to='images/thumbnails/%Y/%m/%d/',
+        validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'webp', 'jpeg', 'gif'))],
+    )
+    class Meta:
+        db_table = 'system_rules'
+        verbose_name = 'Правила'
+        verbose_name_plural = 'Правила'
+    def __str__(self):
+        return f'{self.title}'
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__thumbnail = self.thumbnail if self.pk else None
+
+    def save(self, *args, **kwargs):
+        """
+        Сохранение полей модели при их отсутствии
+        """
+        if not self.slug:
+            self.slug = unique_slugify(self, self.title)
+        super().save(*args, **kwargs)
+        if self.__thumbnail != self.thumbnail and self.thumbnail:
+            image_compress(self.thumbnail.path, width=400, height=400)
+
+
+
+class ReklamaInfo(models.Model):
+    """
+    pip install pillow для работы ImageField
+    """
+    title = models.CharField(verbose_name='Заголовок '
+                                          '', max_length=255)
+    slug = models.SlugField(verbose_name='URL', max_length=255, blank=True, unique=True)
+    description = CKEditor5Field(verbose_name='текст', config_name='extends')
+    thumbnail = models.ImageField(
+        verbose_name='превью поста',
+        blank=True,
+        upload_to='images/thumbnails/%Y/%m/%d/',
+        validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'webp', 'jpeg', 'gif'))],
+    )
+    class Meta:
+        db_table = 'system_reklamainfo'
+        verbose_name = 'Информация о рекламе'
+        verbose_name_plural = 'Информация о рекламе'
+    def __str__(self):
+        return f'{self.title}'
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__thumbnail = self.thumbnail if self.pk else None
+
+    def save(self, *args, **kwargs):
+        """
+        Сохранение полей модели при их отсутствии
+        """
+        if not self.slug:
+            self.slug = unique_slugify(self, self.title)
+        super().save(*args, **kwargs)
+        if self.__thumbnail != self.thumbnail and self.thumbnail:
+            image_compress(self.thumbnail.path, width=400, height=400)

@@ -15,7 +15,7 @@ def tag_about():
     about = About.objects.filter(id=1)
     return about
 
-@register.simple_tag
-def tag_faq():
-    about = Faq.objects.all()
-    return about
+# @register.simple_tag
+# def tag_faq():
+#     about = Faq.objects.all()
+#     return about

@@ -32,15 +32,15 @@
               <br>
               <div class="col-md-9">
                 <article class="blog-detail">
-                    {% for conf in conf %}
+                    {% for rul in rules %}
                     <div class="feature-image">
-                  <h3 class="title-blog-detail">{{ conf.title }}</h3>
+                  <h3 class="title-blog-detail">{{ rul.title }}</h3>
                   <div class="content">
 
                     <div class="row">
                       <div class="col-md-12">
                         <h4></h4>
-                        <p>{{ conf.description|safe }}</p>
+                        <p>{{ rul.description|safe }}</p>
                           </div>
                       </div>
                     </div>
