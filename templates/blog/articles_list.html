@@ -10,14 +10,14 @@
       <br>
       <section class="sub-header shop-layout-1">
           {% if banner_header %}
-                    {% for banner in banner_header %}
-                        <a href="{{ banner.urls }}">
-                         <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}" width="1200" height="250" >
-                        </a>
-                        <div class="overlay-call-to-action"></div>
-                    {% endfor %}
-                         {% else %}
-                         <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+          {% for banner in banner_header %}
+          <a href="{{ banner.urls }}">
+              <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}" width="1200" height="250" >
+          </a>
+          <div class="overlay-call-to-action"></div>
+          {% endfor %}
+          {% else %}
+          <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
 
         <div class="overlay-call-to-action"></div>
         <h3 class="heading-style-3">{{ title }} </h3>
@@ -46,7 +46,7 @@
               <div class="row blog-h-full-width">
                 {% for article in articles %}
                 <div class="col-md-12">
-                  <div class="post">
+                  <div class="list-blog">
                     <div class="img-wrapper">
                       <a href="{{ article.get_absolute_url }}">
                          {% if article.thumbnail %}

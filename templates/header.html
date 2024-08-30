@@ -5,7 +5,7 @@
         <div class="container">
           <div class="row">
             <div class="header-1-inner">
-              <a class="brand-logo animsition-link" href="index.html">
+              <a class="brand-logo animsition-link" href="{% url 'blog:blog' %}">
                 <img class="img-responsive" src="{% static 'images/logo.png' %}" alt="" />
               </a>
               <nav>
@@ -79,7 +79,7 @@
                     </ul>
                   </li>
                     <li>
-                    <a href="faq.html">Поддержка</a>
+                    <a href="#">Поддержка</a>
                     <ul>
                       <li>
                     <a href="{% url 'system:faq' %}">FAQ</a>

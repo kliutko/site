@@ -21,6 +21,12 @@ class Profile(models.Model):
         default='images/avatars/default.png',
         blank=True,
         validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'jpeg'))])
+    image_header = models.ImageField(
+        verbose_name='Шапка профиля',
+        upload_to='images/image_head/%Y/%m/%d/',
+        default='images/avatars/default.png',
+        blank=True,
+        validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'jpeg'))])
     bio = models.TextField(max_length=500, blank=True, verbose_name='Информация о себе')
     birth_date = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
     following = models.ManyToManyField('self', verbose_name='Подписки', related_name='followers', symmetrical=False, blank=True)

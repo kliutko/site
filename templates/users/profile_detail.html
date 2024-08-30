@@ -10,15 +10,21 @@
       <br>
       <br>
       <br>
-
-    <div class="shop-detail-3 woocommerce" id="page">
-
-
-      <section class="sub-header shop-detail-1">
-        <img class="rellax bg-overlay" src="{% static 'images/sub-header/017.jpg' %}" alt="">
+      <section class="sub-header shop-layout-1">
+          {% if profile.image_header %}
+          <a>
+              <img src="{{ profile.image_header.url }}" alt="{{ profile.user.get_full_name }}" width="1200" height="250" >
+          </a>
+          <div class="overlay-call-to-action"></div>
+          {% else %}
+          <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
         <div class="overlay-call-to-action"></div>
-        <h3 class="heading-style-3">{{ profile }}</h3>
+        <h3 class="heading-style-3">{{ profile.user.get_full_name }} </h3>
+          {% endif %}
+
       </section>
+
+<br>
       {% endblock %}
 
 
@@ -51,9 +57,11 @@
                 <div class="list-link">
                 <h4 class="h4 heading"></h4>
                 <ul>
+                  {% if request.user == profile.user %}
                   <li>
                     <a href="{% url 'blog:articles_by_user'%}">Мои публикации</a>
                   </li>
+                  {% endif %}
                   <li>
                   <a href="{% url 'blog:articles_create' %}">Добавить статью</a>
                   </li>
@@ -90,7 +98,7 @@
                 <div class="summary">
                   <div class="desc">
                     <div class="header-desc">
-                      <h2 class="product-title">{{ profile.user.username }}</h2>
+                      <h2 class="product-title"></h2>
                       <p class="price">{% if profile.user.get_full_name %} {{ profile.user.get_full_name }}{% endif %}
                         {% if request.user == profile.user %}
 

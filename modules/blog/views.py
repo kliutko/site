@@ -38,7 +38,7 @@ class ArticleListView(ViewCountReklamaMixin, ListView):
     template_name = 'blog/articles_list.html'
     context_object_name = 'articles'
     allow_empty = False
-    paginate_by = 2
+    paginate_by = 10
     paginate_orphans = 0
     paginator_class = Paginator
 

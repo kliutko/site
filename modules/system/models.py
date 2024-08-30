@@ -52,19 +52,10 @@ class Reklama(models.Model):
         ('stopped', 'Остановлена')
     )
     PLACEMENT_OPTIONS = (
-        ('header_banners_blog', 'Баннер в шапке раздела блог'),
-        ('header_banners_news', 'Баннер в шапке раздела новости'),
-        ('header_banners_all', 'Баннер в шапке сквозной'),
-        ('left_blog', 'Баннер в левом блоке раздела блог'),
-        ('left_news', 'Баннер в левом блоке раздела новости'),
-        ('left_all', 'Баннер в левом блоке сквозной'),
-        ('left_down_blog', 'Баннер снизу в левом блоке раздела блог'),
-        ('left_down_news', 'Баннер снизу в левом блоке раздела новости'),
-        ('left_down_all', 'Баннер снизу в левом блоке сквозной'),
-        ('footer_banners_blog', 'Баннер в низу раздела блог'),
-        ('footer_banners_news', 'Баннер в низу раздела новости'),
-        ('footer_banners_all', 'Баннер в низу сквозной'),
-
+        ('header_banners_blog', 'Баннер в шапке сайта'),
+        ('left_blog', 'Баннер в левом блоке'),
+        ('left_down_blog', 'Баннер в левом блоке снизу'),
+        ('footer_banners_blog', 'Баннер в подвале сайта'),
     )
 
     title = models.CharField(verbose_name='Название', max_length=255)
