@@ -25,7 +25,13 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
     following = models.ManyToManyField('self', verbose_name='Подписки', related_name='followers', symmetrical=False, blank=True)
     agree_rules = models.BooleanField(default=False, verbose_name='Согласен с правилами сайта')
-    agree_conf = models.BooleanField(default=False)
+    agree_conf = models.BooleanField(default=False, verbose_name='Согласен с политикой конфедициальности')
+    url_facebook = models.URLField(verbose_name='Ссылка на Facebook', max_length=255, blank=True, unique=False)
+    url_pinterest = models.URLField(verbose_name='Ссылка на Pinterest', max_length=255, blank=True, unique=False)
+    url_twitter = models.URLField(verbose_name='Ссылка на Twitter', max_length=255, blank=True, unique=False)
+    url_google = models.URLField(verbose_name='Ссылка на Google plus', max_length=255, blank=True, unique=False)
+    url_instagram = models.URLField(verbose_name='Ссылка на Instagram', max_length=255, blank=True, unique=False)
+
 
 
     class Meta:
@@ -62,6 +68,17 @@ class Profile(models.Model):
         if last_seen is not None and timezone.now() < last_seen + timezone.timedelta(seconds=300):
             return True
         return False
+
+    def get_count_followers(self):
+        """
+        Возвращает количество
+        """
+        return self.profile.followers.count()
+    def get_count_following(self):
+        """
+        Возвращает количество
+        """
+        return self.following.count()
 
     @property
     def get_avatar(self):

@@ -38,6 +38,8 @@ class ProfileDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = f'Страница пользователя: {self.object.user.username}'
+        context['articles'] = Article.objects.filter(author=self.object.user)
+
         return context
 
 class ProfileUpdateView(UpdateView):

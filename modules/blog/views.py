@@ -1,10 +1,8 @@
 from django.db.models.functions import datetime
 from django.http import JsonResponse
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DeleteView, CreateView, UpdateView, DetailView
-
 from .mixins import ViewCountMixin
 from .models import Article, Category
 from django.core.paginator import Paginator
@@ -12,7 +10,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from ..services.mixins import AuthorRequiredMixin
 from modules.blog.forms import ArticleCreateForm, ArticleUpdateForm
 from django.views.generic import CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
 from taggit.models import Tag
 from .forms import CommentCreateForm
 from .models import Comment
@@ -26,8 +23,10 @@ from ..services.utils import get_client_ip
 from ..system.mixins import ViewCountReklamaMixin
 from ..system.models import Reklama
 from django.utils import timezone
-
 from ..users.models import Profile
+from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Article
 
 now = timezone.localtime()
 # now = datetime.datetime.now().time()
@@ -47,7 +46,6 @@ class ArticleListView(ViewCountReklamaMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Блог'
-
         context['banner_header'] = Reklama.objects.all().filter(placement='header_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
         context['banner_footer'] = Reklama.objects.all().filter(placement='footer_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
         context['left_blog'] = Reklama.objects.all().filter(placement='left_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
@@ -174,6 +172,7 @@ class ArticleByCategoryListview(ListView):
         return context
 
 
+
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     """
     Представление: создание материалов на сайте
@@ -283,10 +282,6 @@ class CommentCreateView(CreateView):
         return redirect(comment.article.get_absolute_url())
 
 
-from django.views.generic import ListView
-from django.contrib.auth.mixins import LoginRequiredMixin
-
-from .models import Article
 
 
 class ArticleBySignedUser(LoginRequiredMixin, ListView):
@@ -307,4 +302,25 @@ class ArticleBySignedUser(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Статьи авторов'
+        return context
+
+
+class ArticleByUser(LoginRequiredMixin, ListView):
+    """
+    Представление, выводящее список статей авторов, на которые подписан текущий пользователь
+    """
+    model = Article
+    template_name = 'blog/articles_list.html'
+    context_object_name = 'articles'
+    login_url = 'login'
+    paginate_by = 10
+
+    def get_queryset(self):
+
+        queryset = self.model.objects.all().filter(author=self.request.user)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Cвои статьи'
         return context
