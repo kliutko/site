@@ -27,6 +27,8 @@ from ..system.mixins import ViewCountReklamaMixin
 from ..system.models import Reklama
 from django.utils import timezone
 
+from ..users.models import Profile
+
 now = timezone.localtime()
 # now = datetime.datetime.now().time()
 # Create your views here.
@@ -70,6 +72,7 @@ class ArticleDetailView(ViewCountMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = self.object.title
         context['form'] = CommentCreateForm
+        context['profile'] = Profile.objects.all()
         context['similar_articles'] = self.get_similar_articles(self.object)
         context['banner_header'] = Reklama.objects.all().filter(placement='header_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
         context['banner_footer'] = Reklama.objects.all().filter(placement='footer_banners_blog', status='inwork', start_time__lte=now, stop_time__gte=now)
@@ -178,7 +181,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'blog/articles_create.html'
     form_class = ArticleCreateForm
-    login_url = 'blog:home'
+    login_url = 'blog:blog'
 
 
     def get_context_data(self, **kwargs):
@@ -199,7 +202,7 @@ class ArticleUpdateView(AuthorRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'blog/articles_update.html'
     context_object_name = 'article'
     form_class = ArticleUpdateForm
-    login_url = 'blog:home'
+    login_url = 'blog:blog'
     success_message = 'Материал был успешно обновлен'
 
 
@@ -218,7 +221,7 @@ class ArticleDeleteView(AuthorRequiredMixin, DeleteView):
     Представление: удаления материала
     """
     model = Article
-    success_url = reverse_lazy('blog:home')
+    success_url = reverse_lazy('blog:blog')
     context_object_name = 'article'
     template_name = 'blog/articles_delete.html'
     # queryset = model.objects.detail()

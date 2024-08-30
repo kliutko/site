@@ -38,6 +38,13 @@
                           / Добавил:
                       <a href="/users/{{ article.author.profile.slug }}">{{ article.author.username }}</a>
                           / Просмотры: {{ article.get_view_count }}
+                                | {% if request.user.is_authenticated and request.user == article.author %}
+                                    <a href="{% url 'blog:articles_update' article.slug %}">Изменить.</a>
+                                    {% endif %}
+                                / {% if request.user.is_authenticated and request.user == article.author %}
+                                    <a href="{% url 'blog:articles_delete' article.slug %}">Удалить.</a>
+                                    {% endif %}
+
                   </p>
                   <div class="content">
                     {% if article.thumbnail %}

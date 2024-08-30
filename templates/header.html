@@ -107,21 +107,41 @@
                     </a>
                   </li>
                     </ul>
-                  <li>
-                    <a href="faq.html">Личный кабинет</a>
+                  <li>{% if user.is_authenticated %}
+                    <a href="{% url 'users:profile_detail' request.user.profile.slug %}">Личный кабинет</a>
+                    {% else %}
+                    <li>
+                     <a href="#">Личный кабинет</a>
+                    </li>
+                    {% endif %}
+
                     <ul>
-                      <li>
-                        <a href="404.html">404 Page</a>
-                      </li>
-                      <li>
-                        <a href="faq.html">Faq</a>
-                      </li>
-                      <li>
-                        <a href="login.html">Login</a>
-                      </li>
-                      <li>
-                        <a href="register.html">Register</a>
-                      </li>
+                      {% if user.is_authenticated %}
+                             <li>
+                                <a href="{% url 'users:profile_detail' request.user.profile.slug %}" >Профиль</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'blog:articles_create' %}">Добавить статью</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'users:logout' %}"> Выход</a>
+                            </li>
+
+                            {% else %}
+                            <li>
+                                <a href="{% url 'users:login' %}" >Вход</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'users:register' %}"> Регистрация</a>
+                            </li>
+
+                            {% endif %}
+
+                            {% if user.is_superuser or user.is_staff %}
+                            <li>
+                                <a href="{% url 'admin:login' %}"> Админ панель </a>
+                            </li>
+                            {% endif %}
                     </ul>
                   </li>
 

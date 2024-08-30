@@ -41,7 +41,7 @@ class ProfileUpdateForm(forms.ModelForm):
     """
     class Meta:
         model = Profile
-        fields = ('slug', 'birth_date', 'bio', 'avatar', 'agree_rules')
+        fields = ('slug', 'birth_date', 'bio', 'avatar')
 
     def __init__(self, *args, **kwargs):
         """

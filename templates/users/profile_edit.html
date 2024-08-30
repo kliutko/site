@@ -17,7 +17,7 @@
       <section class="sub-header shop-detail-1">
         <img class="rellax bg-overlay" src="{% static 'images/sub-header/017.jpg' %}" alt="">
         <div class="overlay-call-to-action"></div>
-        <h3 class="heading-style-3">Shop Detail</h3>
+        <h3 class="heading-style-3">{{ profile.title }}</h3>
       </section>
       {% endblock %}
 
@@ -46,11 +46,7 @@
                 {% csrf_token %}
          {{ user_form.as_p }}
          {{ form.as_p }}
-          <div class="checkbox pull-left">
-                    <label>
-                      <input type="checkbox"> Remember me
-                    </label>
-                  </div>
+
                 <br>
                     <div class="form-group remember-me">
                   <div class="checkbox pull-left">
@@ -58,7 +54,7 @@
 
                 </div>
                 <div class="form-group footer-form">
-                 <button class="btn btn-brand pill" type="submit">Войти</button>
+                 <button class="btn btn-brand pill" type="submit">Подтвердить</button>
                 </div>
                 </form>
 

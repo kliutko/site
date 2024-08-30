@@ -136,6 +136,9 @@
                                 <a href="{% url 'users:profile_detail' request.user.profile.slug %}" >Профиль</a>
                             </li>
                             <li>
+                                <a href="{% url 'blog:articles_create' %}">Добавить статью</a>
+                            </li>
+                            <li>
                                 <a href="{% url 'users:logout' %}"> Выход</a>
                             </li>
 
