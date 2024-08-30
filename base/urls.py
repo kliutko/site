@@ -40,6 +40,7 @@ urlpatterns = [
     path('feeds/latest/', LatestArticlesFeed(), name='latest_articles_feed'),
     path('users/', include('modules.users.urls')),
     path('blog/', include('modules.blog.urls')),
+    path('news/', include('modules.news.urls')),
     path('system/', include('modules.system.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 

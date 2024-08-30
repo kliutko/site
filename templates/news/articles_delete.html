@@ -1,0 +1,106 @@
+
+
+
+
+
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% load mptt_tags %}
+{% load blog_tags %}
+
+      {% block banerheader %}
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+
+
+      <section class="sub-header shop-detail-1">
+        <img class="rellax bg-overlay" src="{% static 'images/sub-header/017.jpg' %}" alt="">
+        <div class="overlay-call-to-action"></div>
+        <h3 class="heading-style-3">{{ profile.title }}</h3>
+      </section>
+      {% endblock %}
+
+
+      {% block imagecategory %}
+      {% endblock %}
+
+      {% block products %}
+      {% endblock %}
+
+      {% block bannerbody %}
+      <div class="login" id="page">
+      {% endblock %}
+
+      {% block content %}
+
+      <section class="boxed-sm">
+        <div class="container">
+          <div class="login-wrapper">
+            <div class="row">
+              <h3>Удаление статьи</h3>
+
+                <form method="post">
+            {% csrf_token %}
+            <div class="alert alert-warning" role="alert">
+                <i class="fas fa-info-circle"></i> Вы собираетесь удалить статью: <strong>{{ article.title }}</strong>, вы подтверждаете свое действие?
+            </div>
+            <div class="d-grid gap-2 d-md-block mt-2">
+                <button type="submit" class="btn btn-dark">Удалить статью</button>
+                <a href="{{ article.get_absolute_url }}" class="btn btn-dark">Отменить удаление</a>
+            </div>
+        </form>
+
+ </div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+{% endblock %}
+
+      {% block banerfooter %}
+
+      {% endblock %}
+
+
+    {% block subscribe %}
+    {% endblock %}
+
+{% block script %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

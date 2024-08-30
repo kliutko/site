@@ -78,6 +78,27 @@
                                     {% endrecursetree %}
                     </ul>
                   </li>
+                  <li>
+                    <a href="{% url 'news:blog' %}">Новости</a>
+                    <ul>
+                        {% full_tree_for_model news.NewsCategory as categories %}
+                                    {% recursetree categories %}
+                                    <li>
+                                        <a href="{{ node.get_absolute_url }}">
+                                            {{ node.title }}
+                                            <i class="fa fa-plus icon-submenu-down"></i>
+                                        </a>
+                                        <ul class="sub-menu">
+                                        {% if not node.is_leaf_node %}{% endif %}
+                                            <li>
+                                              {{children}}
+                                            </li>
+                                        {% if not node.is_leaf_node %}{% endif %}
+                                        </ul>
+                                    </li>
+                                    {% endrecursetree %}
+                    </ul>
+                  </li>
                     <li>
                     <a href="#">Поддержка</a>
                     <ul>

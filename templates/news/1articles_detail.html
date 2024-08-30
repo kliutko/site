@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <img src="{{ article.thumbnail.url }} alt={{ article.title }}" width="250"/>
+    <strong>{{ article.title }}</strong>
+    <p>{{ article.description }}</p>
+    <small>{{ article.time_create }}</small>
+    <hr>
+    <span>{{ article.category.title }}</span>
+    <hr>
+
+
+{% endblock %}

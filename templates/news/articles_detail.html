@@ -48,6 +48,7 @@
                   </p>
                   <div class="content">
                     {% if article.thumbnail %}
+
                          <img class="img-responsive pull-left" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
                          {% else %}
                          <img class="img-responsive pull-left" src="{% static 'images/blog/012.jpg' %}" alt="{{ article.title }}">
@@ -148,7 +149,7 @@
 		<h5 class="card-title">
 		<br>
 		</h5>
-		{% include 'blog/comments/comments_list.html' %}
+		{% include 'news/comments/comments_list.html' %}
         <br>
 	</div>
 </div>

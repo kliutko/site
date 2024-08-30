@@ -1,10 +1,10 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 
-from .models import Article
+from .models import NewsArticle
 
 
-class ArticleSitemap(Sitemap):
+class NewsArticleSitemap(Sitemap):
     """
     Карта-сайта для статей
     """
@@ -14,7 +14,7 @@ class ArticleSitemap(Sitemap):
     protocol = 'https'
 
     def items(self):
-        return Article.objects.all()
+        return NewsArticle.objects.all()
 
     def lastmod(self, obj):
         return obj.time_update

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mptt_tags %}
+{% load blog_tags %}
+
+      {% block banerheader %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+          {% if banner_header %}
+          {% for banner in banner_header %}
+          <a href="{{ banner.urls }}">
+              <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}" width="1200" height="250" >
+          </a>
+          <div class="overlay-call-to-action"></div>
+          {% endfor %}
+          {% else %}
+          <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+
+        <div class="overlay-call-to-action"></div>
+        <h3 class="heading-style-3">{{ title }} </h3>
+          {% endif %}
+
+      </section>
+      {% endblock %}
+
+
+      {% block imagecategory %}
+      {% endblock %}
+
+      {% block products %}
+      {% endblock %}
+
+      {% block bannerbody %}
+      {% endblock %}
+
+      {% block content %}
+{% include 'blog_left_block.html' %}
+<!--              content block -->
+
+            <br>
+            <br>
+            <div class="col-md-9">
+              <div class="row blog-h-full-width">
+                {% for article in articles %}
+                <div class="col-md-12">
+                  <div class="list-blog">
+                    <div class="img-wrapper">
+                      <a href="{{ article.get_absolute_url }}">
+                         {% if article.thumbnail %}
+                         <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
+                         {% else %}
+                         <img src="{% static 'images/blog/012.jpg' %}" alt="{{ article.title }}">
+                         {% endif %}
+                      </a>
+                    </div>
+                    <div class="desc">
+                      <h3>
+                        <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                        <a href="{{ article.articles.get_absolute_url }}" class ="btn btn-primary">{{ article.category.title }}</a>
+                      </h3>
+                      <p class="meta">
+                        <span class="time">{{ article.time_create }}</span>
+                        <span class="comment">{{ article.get_count_comments }}</span>
+                          / Добавил:
+                      <a href="/users/{{ article.author.profile.slug }}">{{ article.author.username }}</a>
+                          / Просмотры: {{ article.get_view_count }}
+                  </p>
+                      <p class="sapo">{{ article.description|truncatewords:55|safe }}</p>
+<!--rating-->
+                <div class="rating-buttons">
+                    <button class="btn btn-sm btn-primary" data-article="{{ article.id }}" data-value="1">Лайк</button>
+                    <button class="btn btn-sm btn-secondary" data-article="{{ article.id }}" data-value="-1">Дизлайк</button>
+                    <button class="btn btn-sm btn-secondary rating-sum">{{ article.get_sum_rating }}</button>
+                </div>
+
+<!--endrating-->
+
+                      <a class="read-more" href="{{ article.get_absolute_url }}">Читать далее...
+                        <i class="fa fa-long-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="row">
+                <div class="col-md-12 text-right">
+
+<!--Paginations-->
+                    {% include 'paginator.html' %}
+                  <br>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}
+
+      {% block banerfooter %}
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class="sub-header shop-layout-1">
+
+          {% if banner_footer %}
+                    {% for banner in banner_footer %}
+                        <a href="{{ banner.urls }}">
+                         <img src="{{ banner.thumbnail.url }}" alt="{{ banner.title }}" width="1200" height="250" >
+                        </a>
+                        <div class="overlay-call-to-action"></div>
+                    {% endfor %}
+                         {% else %}
+                         <img class="rellax bg-overlay" src="{% static 'images/sub-header/01.jpg' %}" alt="">
+
+        <div class="overlay-call-to-action"></div>
+
+          {% endif %}
+
+      </section>
+      {% endblock %}
+
+
+    {% block subscribe %}
+    {% endblock %}
+
+{% block script %}
+<script src="{% static 'js/ratings.js' %}"></script>
+{% endblock %}
