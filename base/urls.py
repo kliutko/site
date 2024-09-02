@@ -44,7 +44,7 @@ urlpatterns = [
     path('system/', include('modules.system.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns = [path('__debug__/', include('debug_toolbar.urls'))] + urlpatterns

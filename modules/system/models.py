@@ -108,6 +108,87 @@ class Reklama(models.Model):
         today = date.today()
         return self.views.filter(viewed_on__date=today).count()
 
+
+
+
+
+
+
+class Reklama(models.Model):
+    """
+    Модель постов рекламы сайта
+    pip install pillow для работы ImageField
+    """
+
+    class ReklamaManager(models.Manager):
+        def all(self):
+            return self.get_queryset().select_related('client').prefetch_related('views').filter(
+                status='inwork')
+        # def all(self):
+        #     return self.get_queryset().select_related('title').prefetch_related('views').filter(
+        #         status='inwork')
+
+    STATUS_OPTIONS = (
+        ('inwork', 'В работе'),
+        ('stopped', 'Остановлена')
+    )
+    PLACEMENT_OPTIONS = (
+        ('header_banners_blog', 'Баннер в шапке сайта'),
+        ('left_blog', 'Баннер в левом блоке'),
+        ('left_down_blog', 'Баннер в левом блоке снизу'),
+        ('footer_banners_blog', 'Баннер в подвале сайта'),
+    )
+
+    title = models.CharField(verbose_name='Название', max_length=255)
+    client = models.ForeignKey(to=User, verbose_name='Клиент', on_delete=models.CASCADE, blank=True, related_name='client_reklama')
+    urls = models.URLField(verbose_name='URL', max_length=255, blank=True, unique=False)
+    text_url = models.CharField(verbose_name='Текст url', max_length=255, blank=True)
+    description = models.TextField(verbose_name='Описание')
+    thumbnail = models.ImageField(
+        verbose_name='Изображение',
+        blank=False,
+        upload_to='images/reklama/%Y/%m/%d/',
+        validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'webp', 'jpeg', 'gif'))]
+
+    )
+    status = models.CharField(choices=STATUS_OPTIONS, default='inwork', verbose_name='Статус рекламы', max_length=20)
+    placement = models.CharField(choices=PLACEMENT_OPTIONS, default='', verbose_name='Размещение рекламы', max_length=20)
+    start_time = models.DateTimeField(auto_now_add=False, verbose_name='Время начала')
+    stop_time = models.DateTimeField(auto_now=False, verbose_name='Время время окончания')
+
+
+
+
+    objects = ReklamaManager()
+
+    class Meta:
+        db_table = 'app_reklama'
+        ordering = ['-status', 'start_time']
+        indexes = [models.Index(fields=['title', '-start_time', '-stop_time', 'status'])]
+        verbose_name = 'Реклама'
+        verbose_name_plural = 'Реклама'
+
+    def __str__(self):
+        return f'{self.title}, Время начала: {self.start_time}, Время окончания: {self.stop_time}'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__thumbnail = self.thumbnail if self.pk else None
+
+
+    def get_view_count(self):
+        """
+        Возвращает количество просмотров для данной рекламы
+        """
+        return self.views.count()
+
+    def get_today_view_count(self):
+        """
+        Возвращает количество просмотров для данной статьи за сегодняшний день
+        """
+        today = date.today()
+        return self.views.filter(viewed_on__date=today).count()
+
 class ViewCount(models.Model):
     """
     Модель просмотров для статей

@@ -12,17 +12,24 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from celery.schedules import crontab
+import environ
 
+# Работа с env.dev
+env = environ.Env()
 
+# environ.Env.read_env(env_file=Path('./docker/env/.env.dev'))
+environ.Env.read_env(env_file=Path('./docker/env/.env.prod'))
 # celery settings
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Europe/Moscow'
+
+
 
 CELERY_BEAT_SCHEDULE = {
     'backup_database': {
@@ -32,21 +39,35 @@ CELERY_BEAT_SCHEDULE = {
 }
 
 # email yandex
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
 
-EMAIL_HOST_USER = 'help-selfincome@yandex.ru'
-EMAIL_HOST_PASSWORD = 'ztzgdooxbmlmvhcn'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = env('EMAIL_HOST')
+# EMAIL_PORT = env('EMAIL_PORT')
+# EMAIL_USE_SSL = int(env('EMAIL_USE_SSL', default=1))
+#
+# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+#
+# EMAIL_SERVER = EMAIL_HOST_USER
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_ADMIN = EMAIL_HOST_USER
+# EMAIL_ADMINS = list(env('EMAIL_ADMINS'))
+# # EMAIL_ADMINS = ('kliutko.fr@ya.ru',)  # Email Admin to Feedback
+# EMAIL_SERVER = EMAIL_HOST_USER
 
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-SERVER_EMAIL = EMAIL_HOST_USER
-EMAIL_ADMIN = EMAIL_HOST_USER
-EMAIL_ADMINS = ('kliutko.fr@ya.ru',)  # Email Admin to Feedback
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_TLS = int(env('EMAIL_USE_TLS', default=1))
+
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
 EMAIL_SERVER = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = list(EMAIL_HOST_USER)
 
-CSRF_TRUSTED_ORIGINS = ['https://*.selfincome.ru']
+
+CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS').split()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -61,19 +82,22 @@ AUTHENTICATION_BACKENDS = [
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f6bm&jf+o-n5%^mfs@)=rcp35poiz)@8!#0uztct$ewy@(^@vn'
-
+SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(env('DEBUG', default=1))
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split()
+
 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://localhost:6379',
+        'LOCATION': env('REDIS_LOCATION'),
     }
 }
+
+
 
 # CACHES = {
 #     'default': {
@@ -151,17 +175,27 @@ WSGI_APPLICATION = 'base.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'app',
-        'USER': 'postgres',
-        'PASSWORD': '0904',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'app',
+#         'USER': 'postgres',
+#         'PASSWORD': '0904',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -200,11 +234,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+# STATIC_ROOT = (BASE_DIR / 'static')
+
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATIC_ROOT=os.path.join(BASE_DIR,"/static/")
+
 
 
 # STATIC_URL = '/static/'

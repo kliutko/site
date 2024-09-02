@@ -71,8 +71,8 @@
                       <p class="sapo">{{ article.description|truncatewords:55|safe }}</p>
 <!--rating-->
                 <div class="rating-buttons">
-                    <button class="btn btn-sm btn-primary" data-article="{{ article.id }}" data-value="1">Лайк</button>
-                    <button class="btn btn-sm btn-secondary" data-article="{{ article.id }}" data-value="-1">Дизлайк</button>
+                    <button class="btn btn-sm btn-primary" data-article="{{ article.id }}" data-value="1">Нравится</button>
+                    <button class="btn btn-sm btn-secondary" data-article="{{ article.id }}" data-value="-1">Не нравится</button>
                     <button class="btn btn-sm btn-secondary rating-sum">{{ article.get_sum_rating }}</button>
                 </div>
 
