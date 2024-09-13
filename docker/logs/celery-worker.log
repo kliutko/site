@@ -118,3 +118,67 @@ you should set broker_connection_retry_on_startup to True.
 [2024-09-02 00:00:00,020: WARNING/ForkPoolWorker-1] Waiting for database dump...
 [2024-09-02 00:00:00,203: WARNING/ForkPoolWorker-1] Database successfully backed up
 [2024-09-02 00:00:00,205: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[c58e5671-f9fc-48b8-8d43-0c913eb58729] succeeded in 0.18899574599345215s: None
+[2024-09-05 09:40:20,933: WARNING/MainProcess] /usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-09-05 09:40:24,445: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error -2 connecting to redis:6379. Name does not resolve..
+Trying again in 2.00 seconds... (1/100)
+
+[2024-09-05 09:40:29,730: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error -2 connecting to redis:6379. Name does not resolve..
+Trying again in 4.00 seconds... (2/100)
+
+[2024-09-05 09:40:37,017: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error -2 connecting to redis:6379. Name does not resolve..
+Trying again in 6.00 seconds... (3/100)
+
+[2024-09-05 09:40:44,043: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 8.00 seconds... (4/100)
+
+[2024-09-05 09:40:52,124: INFO/MainProcess] Connected to redis://redis:6379/0
+[2024-09-05 09:40:52,125: WARNING/MainProcess] /usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-09-05 09:40:52,128: INFO/MainProcess] mingle: searching for neighbors
+[2024-09-05 09:40:53,137: INFO/MainProcess] mingle: all alone
+[2024-09-05 09:40:53,173: INFO/MainProcess] celery@7f6560d61edf ready.
+[2024-09-05 09:40:53,176: INFO/MainProcess] Task modules.services.tasks.dbackup_task[ec509ef7-0d4d-4dd7-ace4-7ae9ffe60cea] received
+[2024-09-05 09:40:53,294: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-05 09:40:54,248: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-05 09:40:54,250: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[ec509ef7-0d4d-4dd7-ace4-7ae9ffe60cea] succeeded in 1.0724230399999897s: None
+[2024-09-06 00:00:00,072: INFO/MainProcess] Task modules.services.tasks.dbackup_task[26b3bd8b-5f30-41a5-bc06-3f89209ef935] received
+[2024-09-06 00:00:00,110: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-06 00:00:00,351: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-06 00:00:00,355: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[26b3bd8b-5f30-41a5-bc06-3f89209ef935] succeeded in 0.26411625900072977s: None
+[2024-09-07 00:00:00,012: INFO/MainProcess] Task modules.services.tasks.dbackup_task[c6133ced-9b20-48c4-ba5a-13ed362f2196] received
+[2024-09-07 00:00:00,020: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-07 00:00:00,213: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-07 00:00:00,217: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[c6133ced-9b20-48c4-ba5a-13ed362f2196] succeeded in 0.20077071100240573s: None
+[2024-09-08 00:00:00,009: INFO/MainProcess] Task modules.services.tasks.dbackup_task[4cf5dbbe-0aef-4e2c-a123-d8669269fc37] received
+[2024-09-08 00:00:00,014: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-08 00:00:00,230: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-08 00:00:00,232: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[4cf5dbbe-0aef-4e2c-a123-d8669269fc37] succeeded in 0.22064973501255736s: None
+[2024-09-09 00:00:00,016: INFO/MainProcess] Task modules.services.tasks.dbackup_task[c8e74caf-d5e1-4f44-8519-4ab5660be694] received
+[2024-09-09 00:00:00,021: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-09 00:00:00,196: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-09 00:00:00,198: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[c8e74caf-d5e1-4f44-8519-4ab5660be694] succeeded in 0.17960498097818345s: None
+[2024-09-10 00:00:00,006: INFO/MainProcess] Task modules.services.tasks.dbackup_task[7aac54c6-f114-4960-b2af-366ffee8e053] received
+[2024-09-10 00:00:00,011: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-10 00:00:00,200: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-10 00:00:00,202: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[7aac54c6-f114-4960-b2af-366ffee8e053] succeeded in 0.19395116198575124s: None
+[2024-09-11 00:00:00,005: INFO/MainProcess] Task modules.services.tasks.dbackup_task[30375dc5-a39f-4907-9506-6be09cc4f3c9] received
+[2024-09-11 00:00:00,009: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-11 00:00:00,238: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-11 00:00:00,239: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[30375dc5-a39f-4907-9506-6be09cc4f3c9] succeeded in 0.23288854397833347s: None
+[2024-09-12 00:00:00,004: INFO/MainProcess] Task modules.services.tasks.dbackup_task[38f0c39f-5c08-4ad9-a5bc-542c8e8778d8] received
+[2024-09-12 00:00:00,008: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-12 00:00:00,193: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-12 00:00:00,194: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[38f0c39f-5c08-4ad9-a5bc-542c8e8778d8] succeeded in 0.18859137292020023s: None
+[2024-09-13 00:00:00,074: INFO/MainProcess] Task modules.services.tasks.dbackup_task[909034b6-94ba-4588-8e9e-a9c24dad5f99] received
+[2024-09-13 00:00:00,150: WARNING/ForkPoolWorker-1] Waiting for database dump...
+[2024-09-13 00:00:00,435: WARNING/ForkPoolWorker-1] Database successfully backed up
+[2024-09-13 00:00:00,440: INFO/ForkPoolWorker-1] Task modules.services.tasks.dbackup_task[909034b6-94ba-4588-8e9e-a9c24dad5f99] succeeded in 0.3329586259787902s: None

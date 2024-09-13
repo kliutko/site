@@ -310,7 +310,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Обратная связь",
+        "name": "Can add РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ",
         "content_type": [
             "system",
             "feedback"
@@ -321,7 +321,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Обратная связь",
+        "name": "Can change РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ",
         "content_type": [
             "system",
             "feedback"
@@ -332,7 +332,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Обратная связь",
+        "name": "Can delete РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ",
         "content_type": [
             "system",
             "feedback"
@@ -343,7 +343,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Обратная связь",
+        "name": "Can view РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ",
         "content_type": [
             "system",
             "feedback"
@@ -354,7 +354,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Страница о сайте",
+        "name": "Can add РЎС‚СЂР°РЅРёС†Р° Рѕ СЃР°Р№С‚Рµ",
         "content_type": [
             "system",
             "about"
@@ -365,7 +365,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Страница о сайте",
+        "name": "Can change РЎС‚СЂР°РЅРёС†Р° Рѕ СЃР°Р№С‚Рµ",
         "content_type": [
             "system",
             "about"
@@ -376,7 +376,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Страница о сайте",
+        "name": "Can delete РЎС‚СЂР°РЅРёС†Р° Рѕ СЃР°Р№С‚Рµ",
         "content_type": [
             "system",
             "about"
@@ -387,7 +387,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Страница о сайте",
+        "name": "Can view РЎС‚СЂР°РЅРёС†Р° Рѕ СЃР°Р№С‚Рµ",
         "content_type": [
             "system",
             "about"
@@ -398,7 +398,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Политика конфедициальности",
+        "name": "Can add РџРѕР»РёС‚РёРєР° РєРѕРЅС„РµРґРёС†РёР°Р»СЊРЅРѕСЃС‚Рё",
         "content_type": [
             "system",
             "conf"
@@ -409,7 +409,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Политика конфедициальности",
+        "name": "Can change РџРѕР»РёС‚РёРєР° РєРѕРЅС„РµРґРёС†РёР°Р»СЊРЅРѕСЃС‚Рё",
         "content_type": [
             "system",
             "conf"
@@ -420,7 +420,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Политика конфедициальности",
+        "name": "Can delete РџРѕР»РёС‚РёРєР° РєРѕРЅС„РµРґРёС†РёР°Р»СЊРЅРѕСЃС‚Рё",
         "content_type": [
             "system",
             "conf"
@@ -431,7 +431,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Политика конфедициальности",
+        "name": "Can view РџРѕР»РёС‚РёРєР° РєРѕРЅС„РµРґРёС†РёР°Р»СЊРЅРѕСЃС‚Рё",
         "content_type": [
             "system",
             "conf"
@@ -442,7 +442,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Часто задаваемые вопросы",
+        "name": "Can add Р§Р°СЃС‚Рѕ Р·Р°РґР°РІР°РµРјС‹Рµ РІРѕРїСЂРѕСЃС‹",
         "content_type": [
             "system",
             "faq"
@@ -453,7 +453,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Часто задаваемые вопросы",
+        "name": "Can change Р§Р°СЃС‚Рѕ Р·Р°РґР°РІР°РµРјС‹Рµ РІРѕРїСЂРѕСЃС‹",
         "content_type": [
             "system",
             "faq"
@@ -464,7 +464,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Часто задаваемые вопросы",
+        "name": "Can delete Р§Р°СЃС‚Рѕ Р·Р°РґР°РІР°РµРјС‹Рµ РІРѕРїСЂРѕСЃС‹",
         "content_type": [
             "system",
             "faq"
@@ -475,7 +475,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Часто задаваемые вопросы",
+        "name": "Can view Р§Р°СЃС‚Рѕ Р·Р°РґР°РІР°РµРјС‹Рµ РІРѕРїСЂРѕСЃС‹",
         "content_type": [
             "system",
             "faq"
@@ -486,7 +486,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Реклама",
+        "name": "Can add Р РµРєР»Р°РјР°",
         "content_type": [
             "system",
             "reklama"
@@ -497,7 +497,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Реклама",
+        "name": "Can change Р РµРєР»Р°РјР°",
         "content_type": [
             "system",
             "reklama"
@@ -508,7 +508,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Реклама",
+        "name": "Can delete Р РµРєР»Р°РјР°",
         "content_type": [
             "system",
             "reklama"
@@ -519,7 +519,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Реклама",
+        "name": "Can view Р РµРєР»Р°РјР°",
         "content_type": [
             "system",
             "reklama"
@@ -530,7 +530,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Просмотр",
+        "name": "Can add РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "system",
             "viewcount"
@@ -541,7 +541,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Просмотр",
+        "name": "Can change РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "system",
             "viewcount"
@@ -552,7 +552,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Просмотр",
+        "name": "Can delete РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "system",
             "viewcount"
@@ -563,7 +563,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Просмотр",
+        "name": "Can view РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "system",
             "viewcount"
@@ -574,7 +574,95 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Категория",
+        "name": "Can add РџСЂР°РІРёР»Р°",
+        "content_type": [
+            "system",
+            "rules"
+        ],
+        "codename": "add_rules"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change РџСЂР°РІРёР»Р°",
+        "content_type": [
+            "system",
+            "rules"
+        ],
+        "codename": "change_rules"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete РџСЂР°РІРёР»Р°",
+        "content_type": [
+            "system",
+            "rules"
+        ],
+        "codename": "delete_rules"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view РџСЂР°РІРёР»Р°",
+        "content_type": [
+            "system",
+            "rules"
+        ],
+        "codename": "view_rules"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂРµРєР»Р°РјРµ",
+        "content_type": [
+            "system",
+            "reklamainfo"
+        ],
+        "codename": "add_reklamainfo"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂРµРєР»Р°РјРµ",
+        "content_type": [
+            "system",
+            "reklamainfo"
+        ],
+        "codename": "change_reklamainfo"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂРµРєР»Р°РјРµ",
+        "content_type": [
+            "system",
+            "reklamainfo"
+        ],
+        "codename": "delete_reklamainfo"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂРµРєР»Р°РјРµ",
+        "content_type": [
+            "system",
+            "reklamainfo"
+        ],
+        "codename": "view_reklamainfo"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add РљР°С‚РµРіРѕСЂРёСЏ",
         "content_type": [
             "blog",
             "category"
@@ -585,7 +673,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Категория",
+        "name": "Can change РљР°С‚РµРіРѕСЂРёСЏ",
         "content_type": [
             "blog",
             "category"
@@ -596,7 +684,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Категория",
+        "name": "Can delete РљР°С‚РµРіРѕСЂРёСЏ",
         "content_type": [
             "blog",
             "category"
@@ -607,7 +695,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Категория",
+        "name": "Can view РљР°С‚РµРіРѕСЂРёСЏ",
         "content_type": [
             "blog",
             "category"
@@ -618,7 +706,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Статья",
+        "name": "Can add РЎС‚Р°С‚СЊСЏ",
         "content_type": [
             "blog",
             "article"
@@ -629,7 +717,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Статья",
+        "name": "Can change РЎС‚Р°С‚СЊСЏ",
         "content_type": [
             "blog",
             "article"
@@ -640,7 +728,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Статья",
+        "name": "Can delete РЎС‚Р°С‚СЊСЏ",
         "content_type": [
             "blog",
             "article"
@@ -651,7 +739,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Статья",
+        "name": "Can view РЎС‚Р°С‚СЊСЏ",
         "content_type": [
             "blog",
             "article"
@@ -662,7 +750,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Комментарий",
+        "name": "Can add РљРѕРјРјРµРЅС‚Р°СЂРёР№",
         "content_type": [
             "blog",
             "comment"
@@ -673,7 +761,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Комментарий",
+        "name": "Can change РљРѕРјРјРµРЅС‚Р°СЂРёР№",
         "content_type": [
             "blog",
             "comment"
@@ -684,7 +772,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Комментарий",
+        "name": "Can delete РљРѕРјРјРµРЅС‚Р°СЂРёР№",
         "content_type": [
             "blog",
             "comment"
@@ -695,7 +783,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Комментарий",
+        "name": "Can view РљРѕРјРјРµРЅС‚Р°СЂРёР№",
         "content_type": [
             "blog",
             "comment"
@@ -706,7 +794,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Рейтинг",
+        "name": "Can add Р РµР№С‚РёРЅРі",
         "content_type": [
             "blog",
             "rating"
@@ -717,7 +805,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Рейтинг",
+        "name": "Can change Р РµР№С‚РёРЅРі",
         "content_type": [
             "blog",
             "rating"
@@ -728,7 +816,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Рейтинг",
+        "name": "Can delete Р РµР№С‚РёРЅРі",
         "content_type": [
             "blog",
             "rating"
@@ -739,7 +827,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Рейтинг",
+        "name": "Can view Р РµР№С‚РёРЅРі",
         "content_type": [
             "blog",
             "rating"
@@ -750,7 +838,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Просмотр",
+        "name": "Can add РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "blog",
             "viewcount"
@@ -761,7 +849,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Просмотр",
+        "name": "Can change РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "blog",
             "viewcount"
@@ -772,7 +860,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Просмотр",
+        "name": "Can delete РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "blog",
             "viewcount"
@@ -783,7 +871,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Просмотр",
+        "name": "Can view РџСЂРѕСЃРјРѕС‚СЂ",
         "content_type": [
             "blog",
             "viewcount"
@@ -794,7 +882,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can add Профиль",
+        "name": "Can add РџСЂРѕС„РёР»СЊ",
         "content_type": [
             "users",
             "profile"
@@ -805,7 +893,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can change Профиль",
+        "name": "Can change РџСЂРѕС„РёР»СЊ",
         "content_type": [
             "users",
             "profile"
@@ -816,7 +904,7 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can delete Профиль",
+        "name": "Can delete РџСЂРѕС„РёР»СЊ",
         "content_type": [
             "users",
             "profile"
@@ -827,12 +915,232 @@
 {
     "model": "auth.permission",
     "fields": {
-        "name": "Can view Профиль",
+        "name": "Can view РџСЂРѕС„РёР»СЊ",
         "content_type": [
             "users",
             "profile"
         ],
         "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add РљР°С‚РµРіРѕСЂРёСЏ",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "codename": "add_newscategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change РљР°С‚РµРіРѕСЂРёСЏ",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "codename": "change_newscategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete РљР°С‚РµРіРѕСЂРёСЏ",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "codename": "delete_newscategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view РљР°С‚РµРіРѕСЂРёСЏ",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "codename": "view_newscategory"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add РЎС‚Р°С‚СЊСЏ",
+        "content_type": [
+            "news",
+            "newsarticle"
+        ],
+        "codename": "add_newsarticle"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change РЎС‚Р°С‚СЊСЏ",
+        "content_type": [
+            "news",
+            "newsarticle"
+        ],
+        "codename": "change_newsarticle"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete РЎС‚Р°С‚СЊСЏ",
+        "content_type": [
+            "news",
+            "newsarticle"
+        ],
+        "codename": "delete_newsarticle"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view РЎС‚Р°С‚СЊСЏ",
+        "content_type": [
+            "news",
+            "newsarticle"
+        ],
+        "codename": "view_newsarticle"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add РљРѕРјРјРµРЅС‚Р°СЂРёР№",
+        "content_type": [
+            "news",
+            "newscomment"
+        ],
+        "codename": "add_newscomment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change РљРѕРјРјРµРЅС‚Р°СЂРёР№",
+        "content_type": [
+            "news",
+            "newscomment"
+        ],
+        "codename": "change_newscomment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete РљРѕРјРјРµРЅС‚Р°СЂРёР№",
+        "content_type": [
+            "news",
+            "newscomment"
+        ],
+        "codename": "delete_newscomment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view РљРѕРјРјРµРЅС‚Р°СЂРёР№",
+        "content_type": [
+            "news",
+            "newscomment"
+        ],
+        "codename": "view_newscomment"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Р РµР№С‚РёРЅРі",
+        "content_type": [
+            "news",
+            "newsrating"
+        ],
+        "codename": "add_newsrating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Р РµР№С‚РёРЅРі",
+        "content_type": [
+            "news",
+            "newsrating"
+        ],
+        "codename": "change_newsrating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Р РµР№С‚РёРЅРі",
+        "content_type": [
+            "news",
+            "newsrating"
+        ],
+        "codename": "delete_newsrating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Р РµР№С‚РёРЅРі",
+        "content_type": [
+            "news",
+            "newsrating"
+        ],
+        "codename": "view_newsrating"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add РџСЂРѕСЃРјРѕС‚СЂ",
+        "content_type": [
+            "news",
+            "newsviewcount"
+        ],
+        "codename": "add_newsviewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change РџСЂРѕСЃРјРѕС‚СЂ",
+        "content_type": [
+            "news",
+            "newsviewcount"
+        ],
+        "codename": "change_newsviewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete РџСЂРѕСЃРјРѕС‚СЂ",
+        "content_type": [
+            "news",
+            "newsviewcount"
+        ],
+        "codename": "delete_newsviewcount"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view РџСЂРѕСЃРјРѕС‚СЂ",
+        "content_type": [
+            "news",
+            "newsviewcount"
+        ],
+        "codename": "view_newsviewcount"
     }
 },
 {
@@ -924,123 +1232,18 @@
     }
 },
 {
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add Правила",
-        "content_type": [
-            "system",
-            "rules"
-        ],
-        "codename": "add_rules"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change Правила",
-        "content_type": [
-            "system",
-            "rules"
-        ],
-        "codename": "change_rules"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete Правила",
-        "content_type": [
-            "system",
-            "rules"
-        ],
-        "codename": "delete_rules"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view Правила",
-        "content_type": [
-            "system",
-            "rules"
-        ],
-        "codename": "view_rules"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can add Информация о рекламе",
-        "content_type": [
-            "system",
-            "reklamainfo"
-        ],
-        "codename": "add_reklamainfo"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can change Информация о рекламе",
-        "content_type": [
-            "system",
-            "reklamainfo"
-        ],
-        "codename": "change_reklamainfo"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can delete Информация о рекламе",
-        "content_type": [
-            "system",
-            "reklamainfo"
-        ],
-        "codename": "delete_reklamainfo"
-    }
-},
-{
-    "model": "auth.permission",
-    "fields": {
-        "name": "Can view Информация о рекламе",
-        "content_type": [
-            "system",
-            "reklamainfo"
-        ],
-        "codename": "view_reklamainfo"
-    }
-},
-{
     "model": "auth.user",
     "fields": {
-        "password": "pbkdf2_sha256$720000$QKjsv6e8iWLo7AtFcntOz1$rCR+v6rA8/qf32NELaYrUIPF/EaJqbHfUieSeJvFAsU=",
-        "last_login": "2024-08-29T15:40:21.554Z",
+        "password": "pbkdf2_sha256$720000$pq7fQZcEPIBSX0FGHbNLXN$VuyhmgL6GFTG4EwafpoujBHVrNVuXMYzGTT63EQpogM=",
+        "last_login": "2024-09-08T14:10:01.618Z",
         "is_superuser": true,
         "username": "admin",
-        "first_name": "yauheni",
-        "last_name": "kliutko",
+        "first_name": "",
+        "last_name": "",
         "email": "kliutko.fr@gmail.com",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2024-08-29T08:28:07Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "fields": {
-        "password": "pbkdf2_sha256$720000$4xv0FspsyTMR3gEmZLVNEa$sGgZUsMqz0Ki+s0MSuEzTqPCy+eVThQCcHxyjzRupoc=",
-        "last_login": "2024-08-29T12:20:02.364Z",
-        "is_superuser": false,
-        "username": "kliutko",
-        "first_name": "yauheni",
-        "last_name": "kliutko",
-        "email": "kliutko.fr@yandex.ru",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2024-08-29T10:25:25.100Z",
+        "date_joined": "2024-08-31T14:45:47.461Z",
         "groups": [],
         "user_permissions": []
     }
@@ -1054,59 +1257,19 @@
 },
 {
     "model": "sessions.session",
-    "pk": "a2dms11rehdd7lb8q89ke23ur5l1mpm0",
+    "pk": "5pc26vyrssc6lqyei89udqklt4w0q384",
     "fields": {
-        "session_data": ".eJxVi7EOwjAMBf8lM6rixokCIzsjc2THjoIoVCLNhPh3WqkDjO_e3dsk6ktNvekr3cScDJjDL2PKd31ux2OWPmkbNtyGnbfhus7LLDqdd_Mvr9Tq2rI7ltFiAHGsnEmF4gjsIhMKB8wBUb0tFFyxiuSzBwaLiiwQIprPF6OzN_M:1sje98:suqUmN3fUpBSiIkupejxMpEGk0oe21c0rDuVSC9aciA",
-        "expire_date": "2024-09-12T12:21:02.534Z"
-    }
-},
-{
-    "model": "system.faq",
-    "pk": 1,
-    "fields": {
-        "title": "ytryerty",
-        "slug": "ytery",
-        "description": "<p>yrteyertyert</p>",
-        "thumbnail": ""
-    }
-},
-{
-    "model": "system.conf",
-    "pk": 1,
-    "fields": {
-        "title": "Политика конфедициальности",
-        "slug": "conf",
-        "description": "<p>Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальности Политика конфедициальност</p><figure class=\"image image_resized\" style=\"width:34.84%;\"><img style=\"aspect-ratio:500/500;\" src=\"/media/uploads/2024/08/29/ava_gK5Q7Yg.png\" width=\"500\" height=\"500\"></figure><p>и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности и Политика конфедициальности&nbsp;</p>",
-        "thumbnail": ""
-    }
-},
-{
-    "model": "system.rules",
-    "pk": 1,
-    "fields": {
-        "title": "правила сайта",
-        "slug": "rules",
-        "description": "<p>правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта правила сайта&nbsp;</p>",
-        "thumbnail": ""
-    }
-},
-{
-    "model": "system.reklamainfo",
-    "pk": 1,
-    "fields": {
-        "title": "реклама",
-        "slug": "reklama",
-        "description": "<p>реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама реклама&nbsp;</p>",
-        "thumbnail": ""
+        "session_data": ".eJxVi7EOAiEQBf-F2pAFboFY2ltak4VdgvH0EpHK-O_eJVdo-ebNvFWi8WppdHmmK6ujMurwyzKVmzy2477wmKXrDXe9864v6zwvLPNpN__yRr2tLVubK0wRJ8xWTBBAAF9AHKDzQXy2CKEIkwVnnXgmzBEj1YrGR1CfL2WJNq0:1skPMo:MAu5ei3d0G08lTOACZdYkcGclFfO5g9eLFGpGgfEolU",
+        "expire_date": "2024-09-14T14:46:18.545Z"
     }
 },
 {
     "model": "blog.category",
     "pk": 1,
     "fields": {
-        "title": "блюдо",
-        "slug": "blyudo",
-        "description": "блюдо",
+        "title": "1 РєР°С‚РµРіРѕСЂРёСЏ",
+        "slug": "1-kategoriya",
+        "description": "1 РєР°С‚РµРіРѕСЂРёСЏ 1 РєР°С‚РµРіРѕСЂРёСЏ 1 РєР°С‚РµРіРѕСЂРёСЏ",
         "parent": null,
         "lft": 1,
         "rght": 2,
@@ -1118,13 +1281,13 @@
     "model": "blog.article",
     "pk": 1,
     "fields": {
-        "title": "1 Статья для теста",
-        "slug": "1-statya-dlya-testa",
-        "description": "<p>1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста 1 Статья для теста&nbsp;</p><p>&nbsp;</p><figure class=\"image image_resized\" style=\"width:63.83%;\"><img style=\"aspect-ratio:560/400;\" src=\"/media/uploads/2024/08/29/2560x1721_1080545_%5Bwww.ArtFile.ru%5D_T7kLAmn.jpg\" width=\"560\" height=\"400\"></figure>",
-        "thumbnail": "images/thumbnails/2024/08/29/2560x1721_1080545_www.ArtFile.ru.jpg",
+        "title": "1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ",
+        "slug": "1-testovaya-statya",
+        "description": "<p>1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ 1 С‚РµСЃС‚РѕРІР°СЏ СЃС‚Р°С‚СЊСЏ&nbsp;</p>",
+        "thumbnail": "images/thumbnails/blog/2024/08/31/2560x1721_1080545_www.ArtFile.ru.jpg",
         "status": "published",
-        "time_create": "2024-08-29T09:07:11.267Z",
-        "time_update": "2024-08-29T09:07:56.413Z",
+        "time_create": "2024-08-31T14:49:01.742Z",
+        "time_update": "2024-08-31T14:49:01.742Z",
         "author": [
             "admin"
         ],
@@ -1140,8 +1303,26 @@
     "pk": 1,
     "fields": {
         "article": 1,
-        "ip_address": "127.0.0.1",
-        "viewed_on": "2024-08-29T09:07:21.946Z"
+        "ip_address": "172.18.0.1",
+        "viewed_on": "2024-09-01T12:43:07.411Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 2,
+    "fields": {
+        "article": 1,
+        "ip_address": "172.18.0.1",
+        "viewed_on": "2024-09-05T06:43:33.465Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 3,
+    "fields": {
+        "article": 1,
+        "ip_address": "172.18.0.1",
+        "viewed_on": "2024-09-05T06:43:33.654Z"
     }
 },
 {
@@ -1152,44 +1333,32 @@
             "admin"
         ],
         "slug": "admin",
-        "avatar": "images/avatars/2024/08/29/ava.png",
-        "bio": "Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о себе Информация о с",
-        "birth_date": "1992-08-29",
-        "agree_rules": false,
-        "agree_conf": false,
-        "following": [
-            2
-        ]
-    }
-},
-{
-    "model": "users.profile",
-    "pk": 2,
-    "fields": {
-        "user": [
-            "kliutko"
-        ],
-        "slug": "kliutko",
         "avatar": "images/avatars/default.png",
+        "image_header": "images/avatars/default.png",
         "bio": "",
         "birth_date": null,
         "agree_rules": false,
         "agree_conf": false,
+        "url_facebook": "",
+        "url_pinterest": "",
+        "url_twitter": "",
+        "url_google": "",
+        "url_instagram": "",
         "following": []
     }
 },
 {
     "model": "taggit.tag",
     "fields": {
-        "name": "тест",
-        "slug": "тест"
+        "name": "С‚РµСЃС‚РѕРІР°СЏ",
+        "slug": "С‚РµСЃС‚РѕРІР°СЏ"
     }
 },
 {
     "model": "taggit.taggeditem",
     "fields": {
         "tag": [
-            "тест"
+            "С‚РµСЃС‚РѕРІР°СЏ"
         ],
         "content_type": [
             "blog",

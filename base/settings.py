@@ -40,7 +40,7 @@ CELERY_BEAT_SCHEDULE = {
 
 # email yandex
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = env('EMAIL_HOST')
 # EMAIL_PORT = env('EMAIL_PORT')
 # EMAIL_USE_SSL = int(env('EMAIL_USE_SSL', default=1))
@@ -148,9 +148,11 @@ MIDDLEWARE = [
 ]
 
 INTERNAL_IPS = [
-    '127.0.0.1',
+    '*',
 ]
-
+# INTERNAL_IPS = [
+#     '127.0.0.1',
+# ]
 
 ROOT_URLCONF = 'base.urls'
 
@@ -245,7 +247,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_ROOT=os.path.join(BASE_DIR,"/static/")
 
-
+MIDDLEWARE_CLASSES = [
+  # 'django.middleware.security.SecurityMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
+  # ...
+]
 
 # STATIC_URL = '/static/'
 # STATIC_ROOT = (BASE_DIR / 'static')

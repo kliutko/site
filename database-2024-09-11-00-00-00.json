@@ -1235,7 +1235,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$720000$pq7fQZcEPIBSX0FGHbNLXN$VuyhmgL6GFTG4EwafpoujBHVrNVuXMYzGTT63EQpogM=",
-        "last_login": "2024-09-01T12:42:29.329Z",
+        "last_login": "2024-09-08T14:10:01.618Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -1305,6 +1305,24 @@
         "article": 1,
         "ip_address": "172.18.0.1",
         "viewed_on": "2024-09-01T12:43:07.411Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 2,
+    "fields": {
+        "article": 1,
+        "ip_address": "172.18.0.1",
+        "viewed_on": "2024-09-05T06:43:33.465Z"
+    }
+},
+{
+    "model": "blog.viewcount",
+    "pk": 3,
+    "fields": {
+        "article": 1,
+        "ip_address": "172.18.0.1",
+        "viewed_on": "2024-09-05T06:43:33.654Z"
     }
 },
 {
