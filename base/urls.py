@@ -22,10 +22,12 @@ from django.contrib.sitemaps.views import sitemap
 
 from modules.blog.sitemaps import StaticSitemap, ArticleSitemap
 from modules.blog.feeds import LatestArticlesFeed
+from modules.news.sitemaps import NewsArticleSitemap
 
 sitemaps = {
     'static': StaticSitemap,
     'articles': ArticleSitemap,
+    'news': NewsArticleSitemap,
 }
 
 handler403 = 'modules.system.views.tr_handler403'
