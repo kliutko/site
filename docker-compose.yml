@@ -96,6 +96,6 @@ services:
       volumes:
           - ./docker/certbot/conf:/etc/letsencrypt:rw
           - ./docker/certbot/www:/var/www/certbot:rw
-      command: certonly --webroot --webroot-path=/var/www/certbot/ --email kliutko.fr@gmail.com --agree-tos --no-eff-email -d selfincome.ru -d www.selfincome.ru
+#      command: certonly --webroot --webroot-path=/var/www/certbot/ --email kliutko.fr@gmail.com --agree-tos --no-eff-email -d selfincome.ru -d www.selfincome.ru
       depends_on:
         - nginx
