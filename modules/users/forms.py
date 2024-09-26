@@ -41,7 +41,11 @@ class ProfileUpdateForm(forms.ModelForm):
     """
     class Meta:
         model = Profile
-        fields = ('slug', 'birth_date', 'bio', 'avatar')
+        fields = (
+            'slug', 'birth_date', 'bio', 'avatar', 'image_header',
+            'url_facebook', 'url_pinterest', 'url_twitter', 'url_google',
+            'url_instagram'
+        )
 
     def __init__(self, *args, **kwargs):
         """

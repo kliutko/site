@@ -32,11 +32,11 @@ class Profile(models.Model):
     following = models.ManyToManyField('self', verbose_name='Подписки', related_name='followers', symmetrical=False, blank=True)
     agree_rules = models.BooleanField(default=False, verbose_name='Согласен с правилами сайта')
     agree_conf = models.BooleanField(default=False, verbose_name='Согласен с политикой конфедициальности')
-    url_facebook = models.URLField(verbose_name='Ссылка на Facebook', max_length=255, blank=True, unique=False)
-    url_pinterest = models.URLField(verbose_name='Ссылка на Pinterest', max_length=255, blank=True, unique=False)
-    url_twitter = models.URLField(verbose_name='Ссылка на Twitter', max_length=255, blank=True, unique=False)
-    url_google = models.URLField(verbose_name='Ссылка на Google plus', max_length=255, blank=True, unique=False)
-    url_instagram = models.URLField(verbose_name='Ссылка на Instagram', max_length=255, blank=True, unique=False)
+    url_facebook = models.URLField(verbose_name='Ссылка на Facebook', max_length=255, blank=True, unique=False, help_text='Ссылка должна начинаться с: http:// или https://')
+    url_pinterest = models.URLField(verbose_name='Ссылка на Pinterest', max_length=255, blank=True, unique=False, help_text='Ссылка должна начинаться с: http:// или https://')
+    url_twitter = models.URLField(verbose_name='Ссылка на Twitter', max_length=255, blank=True, unique=False, help_text='Ссылка должна начинаться с: http:// или https://')
+    url_google = models.URLField(verbose_name='Ссылка на Google plus', max_length=255, blank=True, unique=False, help_text='Ссылка должна начинаться с: http:// или https://')
+    url_instagram = models.URLField(verbose_name='Ссылка на Instagram', max_length=255, blank=True, unique=False, help_text='Ссылка должна начинаться с: http:// или https://')
 
 
 
@@ -89,8 +89,8 @@ class Profile(models.Model):
     @property
     def get_avatar(self):
         if self.avatar:
-            return self.avatar.url
-        return f'https://ui-avatars.com/api/?size=150&background=random&name={self.slug}'
+            return f'{self.avatar.url}?300x200'
+        return f'https://ui-avatars.com/api/?size=300&background=random&name={self.slug}'
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
