@@ -102,7 +102,11 @@
                       <p class="price">{% if profile.user.get_full_name %} {{ profile.user.get_full_name }}{% endif %}
                         {% if request.user == profile.user %}
 
+                    <h12> <small><small><small><small><small><small>
                       <a href="{% url 'users:profile_edit' %}" class="btn btn-dark">            Редактировать профиль</a>
+                      <a href="{% url 'users:password_change' %}" class="btn btn-dark">         Изменить пароль</a>
+                    </small></small></small></small></small></small>
+                        </h12>
                       {% endif %}
                       </p>
                      <li>{% if profile.is_online %}Онлайн{% else %}Не в сети | Заходил: {{ profile.user.last_login }} {% endif %}

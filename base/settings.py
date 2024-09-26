@@ -18,8 +18,8 @@ import environ
 # Работа с env.dev
 env = environ.Env()
 
-# environ.Env.read_env(env_file=Path('./docker/env/.env.dev'))
-environ.Env.read_env(env_file=Path('./docker/env/.env.prod'))
+environ.Env.read_env(env_file=Path('./docker/env/.env.dev'))
+# environ.Env.read_env(env_file=Path('./docker/env/.env.prod'))
 # celery settings
 CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
