@@ -14,6 +14,7 @@ from pathlib import Path
 from celery.schedules import crontab
 import environ
 
+
 # Работа с env.dev
 env = environ.Env()
 
@@ -41,30 +42,26 @@ CELERY_BEAT_SCHEDULE = {
 # email yandex
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = env('EMAIL_HOST')
-# EMAIL_PORT = env('EMAIL_PORT')
-# EMAIL_USE_SSL = int(env('EMAIL_USE_SSL', default=1))
-#
-# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-#
-# EMAIL_SERVER = EMAIL_HOST_USER
-# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-# EMAIL_ADMIN = EMAIL_HOST_USER
+
+
+
 # EMAIL_ADMINS = list(env('EMAIL_ADMINS'))
-# # EMAIL_ADMINS = ('kliutko.fr@ya.ru',)  # Email Admin to Feedback
+EMAIL_ADMINS = ('kliutko.fr@ya.ru',)  # Email Admin to Feedback
 # EMAIL_SERVER = EMAIL_HOST_USER
 
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_PORT = env('EMAIL_PORT')
-EMAIL_USE_TLS = int(env('EMAIL_USE_TLS', default=1))
+EMAIL_USE_SSL = int(env('EMAIL_USE_SSL', default=1))
 
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 EMAIL_SERVER = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_ADMIN = list(EMAIL_HOST_USER)
+EMAIL_ADMIN = EMAIL_HOST_USER
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS').split()
@@ -126,14 +123,14 @@ INSTALLED_APPS = [
     'mptt',
     'django_mptt_admin',
     'modules.services',
-    'debug_toolbar',
+    # 'debug_toolbar',
     'taggit',
     'django_ckeditor_5',
     'django_cleanup',
 
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -142,7 +139,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     'modules.system.middleware.ActiveUserMiddleware',
     'modules.users.middleware.ActiveUserMiddleware',
 ]
@@ -234,18 +231,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-STATIC_URL = 'static/'
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+STATIC_URL = '/static/'
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')1
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-# STATIC_ROOT = (BASE_DIR / 'static')
 
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-STATIC_ROOT=os.path.join(BASE_DIR,"/static/")
+STATIC_ROOT = os.path.join(BASE_DIR,"/static/")
+
+
+# STATIC_ROOT = (BASE_DIR / 'static')
+
+
+
 
 MIDDLEWARE_CLASSES = [
   # 'django.middleware.security.SecurityMiddleware',

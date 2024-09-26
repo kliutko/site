@@ -1,3 +1,4 @@
+from django.core.mail import send_mail
 from django.views.generic import DetailView, UpdateView, CreateView, View, TemplateView
 from django.db import transaction
 from django.urls import reverse_lazy
@@ -97,6 +98,7 @@ class UserRegisterView(UserIsNotAuthenticated, CreateView):
         user.is_active = False
         user.save()
         send_activate_email_message_task.delay(user.id)
+
         return redirect('users:email_confirmation_sent')
 
 class UserLoginView(UserIsNotAuthenticated, LoginView):

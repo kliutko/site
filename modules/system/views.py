@@ -87,7 +87,7 @@ class FeedbackCreateView(SuccessMessageMixin, CreateView):
     success_message = 'Ваше письмо успешно отправлено администрации сайта'
     template_name = 'system/feedback.html'
     extra_context = {'title': 'Контактная форма'}
-    success_url = reverse_lazy('system:home')
+    success_url = reverse_lazy('home:home')
 
     def form_valid(self, form):
         if form.is_valid():

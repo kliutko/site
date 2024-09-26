@@ -1235,7 +1235,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$720000$pq7fQZcEPIBSX0FGHbNLXN$VuyhmgL6GFTG4EwafpoujBHVrNVuXMYzGTT63EQpogM=",
-        "last_login": "2024-09-08T14:10:01.618Z",
+        "last_login": "2024-09-14T11:13:27.483Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -1257,10 +1257,10 @@
 },
 {
     "model": "sessions.session",
-    "pk": "5pc26vyrssc6lqyei89udqklt4w0q384",
+    "pk": "bu00u5modfdw2ekly7hi0nuyenahy6i6",
     "fields": {
-        "session_data": ".eJxVi7EOAiEQBf-F2pAFboFY2ltak4VdgvH0EpHK-O_eJVdo-ebNvFWi8WppdHmmK6ujMurwyzKVmzy2477wmKXrDXe9864v6zwvLPNpN__yRr2tLVubK0wRJ8xWTBBAAF9AHKDzQXy2CKEIkwVnnXgmzBEj1YrGR1CfL2WJNq0:1skPMo:MAu5ei3d0G08lTOACZdYkcGclFfO5g9eLFGpGgfEolU",
-        "expire_date": "2024-09-14T14:46:18.545Z"
+        "session_data": ".eJxVi7EOAiEQBf-F2pAFboFY2ltak4VdgvH0EpHK-O_eJVdo-ebNvFWi8WppdHmmK6ujMurwyzKVmzy2477wmKXrDXe9864v6zwvLPNpN__yRr2tLVubK0wRJ8xWTBBAAF9AHKDzQXy2CKEIkwVnnXgmzBEj1YrGR1CfL2WJNq0:1sp5XE:xdJA3hII6Jc1F0qEba52Ct1OLS9wdXvsUnqT3_iDHxo",
+        "expire_date": "2024-09-27T12:36:24.671Z"
     }
 },
 {
