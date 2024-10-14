@@ -1,21 +1,16 @@
 {% load mptt_tags static %}
-
-
 <div class="nested-comments">
-                  <div class="col-md-12">
-                    <div class="comment-area">
-                      <h4 class="title-comment">Коментариев: {{ article.get_count_comments }}</h4>
-                        {% recursetree article.comments.all %}
-                      <ol class="comment-list">
-                          <ul id="comment-thread-{{ node.pk }}">
-                        <li>
-                          <div class="the-comment">
-                            <div class="avatar">
+	{% recursetree article.comments.all %}
+	<ul id="comment-thread-{{ node.pk }}">
+		<li class="card border-0">
+			<div class="row">
+				<div class="col-md-2">
 					<img src="{{ node.get_avatar }}" style="width: 120px;height: 120px;object-fit: cover;" alt="{{ node.author }}" />
-                            </div>
-                            <div class="comment-box">
-                              <div class="comment-author meta">
-                                {% if node.author %}
+				</div>
+				<div class="col-md-10">
+					<div class="card-body">
+						<h6 class="card-title">
+                            {% if node.author %}
                             <a href="{{ node.author.profile.get_absolute_url }}">
                                 {{ node.author }}
                             </a>
@@ -24,34 +19,29 @@
                                 {{ node.name }}
                             </a>
                             {% endif %}
-                                    </p>
-                                    <p class="time">{{ node.time_create }}</p>
-                                  </div>
-                                  <div class="comment-text">
-                                    <p>{{ node.content }}</p>
-                                     <p> {% if node.author %}
+						<p class="card-text">
+							{{ node.content }}
+						</p>
+                        {% if node.author %}
                         <a class="btn btn-sm btn-dark btn-reply" href="#commentForm" data-comment-id="{{ node.pk }}" data-comment-username="{{ node.author }}">Ответить</a>
                         {% else %}
                         <a class="btn btn-sm btn-dark btn-reply" href="#commentForm" data-comment-id="{{ node.pk }}" data-comment-username="{{ node.name }}">Ответить</a>
-                        {% endif %}</p>
-                              </div>
-                            </div>
-                          </div>
-                          <ul class="children">
-                            {% if not node.is_leaf_node %} {{ children }} {% endif %}
-                          </ul>
-                        </li>
-                       <ul/>
-                      </ol>
-                    </div>
-                      {% endrecursetree %}
-
-<br>
+                        {% endif %}
+						<hr />
+						<time>{{ node.time_create }}</time>
+					</div>
+				</div>
+			</div>
+		</li>
+		{% if not node.is_leaf_node %} {{ children }} {% endif %}
+	</ul>
+	{% endrecursetree %}
+</div>
 <div class="card border-0">
 	<div class="card-body">
-		<h4 class="card-title">
+		<h6 class="card-title">
 			Форма добавления комментария
-		</h4>
+		</h6>
 		<form method="post" action="{% url 'blog:comment_create_view' article.pk %}" id="commentForm" name="commentForm" data-article-id="{{ article.pk }}">
 			{% csrf_token %}
             {{ form.content }}
@@ -66,7 +56,6 @@
 				<input type="text" name="email" placeholder="Введите ваш email" required="true" class="form-control" maxlength="255" id="id_email">
 			</div>
 			{% endif %}
-            <br>
 			<div class="d-grid gap-2 d-md-block mt-2">
 				<button type="submit" class="btn btn-dark" id="commentSubmit">Добавить комментарий</button>
 			</div>

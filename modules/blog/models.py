@@ -151,8 +151,6 @@ class Article(models.Model):
         return self.views.filter(viewed_on__date=today).count()
 
 
-
-
 class Comment(MPTTModel):
     """
     Модель древовидных комментариев
@@ -164,12 +162,19 @@ class Comment(MPTTModel):
     )
 
     article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='Статья', related_name='comments')
-    author = models.ForeignKey(User, verbose_name='Автор комментария', on_delete=models.CASCADE, related_name='comments_author')
+    # Автор комментария (пользователь) если авторизован
+    author = models.ForeignKey(User, verbose_name='Автор комментария', on_delete=models.CASCADE,
+                               related_name='comments_author', null=True, blank=True)
+    # Гости сайта, если неавторизованные
+    name = models.CharField(max_length=255, verbose_name='Имя посетителя', blank=True)
+    email = models.EmailField(max_length=255, verbose_name='Email посетителя', blank=True)
+    # Прочие поля
     content = models.TextField(verbose_name='Текст комментария', max_length=3000)
     time_create = models.DateTimeField(verbose_name='Время добавления', auto_now_add=True)
     time_update = models.DateTimeField(verbose_name='Время обновления', auto_now=True)
     status = models.CharField(choices=STATUS_OPTIONS, default='published', verbose_name='Статус поста', max_length=10)
-    parent = TreeForeignKey('self', verbose_name='Родительский комментарий', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
+    parent = TreeForeignKey('self', verbose_name='Родительский комментарий', null=True, blank=True,
+                            related_name='children', on_delete=models.CASCADE)
 
     class MTTMeta:
         order_insertion_by = ('-time_create',)
@@ -192,7 +197,6 @@ class Comment(MPTTModel):
         if self.author:
             return self.author.profile.get_avatar
         return f'https://ui-avatars.com/api/?size=190&background=random&name={self.name}'
-
 
 
 class Rating(models.Model):

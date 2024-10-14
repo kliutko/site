@@ -110,12 +110,12 @@
                         </h6>
                       {% endif %}
                       </p>
+                        <h5>
                      <li>{% if profile.is_online %}Онлайн{% else %}Не в сети | Заходил: {{ profile.user.last_login }} {% endif %}
-                     </li>
-
+                     </li></h5>
 
                         {% if request.user.is_authenticated and request.user != profile.user %} {% if request.user.profile in profile.followers.all %}
-					<button class="btn btn-sm btn-danger btn-follow" data-slug="{{ profile.slug }}">
+                        <button class="btn btn-sm btn-danger btn-follow" data-slug="{{ profile.slug }}">
 						Отписаться от {{ profile.user.username }}
 					</button>
 					{% else %}
@@ -318,5 +318,8 @@
 
 {% block script %}
 <script src="{% static 'custom/js/profile.js' %}"></script>
+<script src="{% static 'js/profile.js' %}"></script>
+
+
 
 {% endblock %}

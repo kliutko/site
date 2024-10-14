@@ -283,8 +283,6 @@ class CommentCreateView(CreateView):
         return redirect(comment.article.get_absolute_url())
 
 
-
-
 class ArticleBySignedUser(LoginRequiredMixin, ListView):
     """
     Представление, выводящее список статей авторов, на которые подписан текущий пользователь
